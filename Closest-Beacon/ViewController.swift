@@ -8,6 +8,9 @@
 
 import UIKit
 import CoreLocation
+import Firebase
+import FirebaseDatabase
+
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var locationName: UILabel!
@@ -23,10 +26,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         14477: "Mint Benoit"
     ]
     
-    
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +35,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         locationManager.startRangingBeacons(in: region)
+        
+        
+        // Start writing to database
+        
+        func post(){
+            
+            let user = "Josh"
+            let currentBeacon = "Beacon"
+            let eventTime = NSDate().timeIntervalSince1970            
+            
+            
+            let post :  [String : AnyObject] = ["user" : user as AnyObject,
+                                                "location" : currentBeacon as AnyObject,
+                                                "eventTime" : eventTime as AnyObject
+                                                ]
+            
+            let databaseREF = Database.database().reference()
+            
+            databaseREF.child("Locations").childByAutoId().setValue(post)
+            
+        }
+        
+        post()
         
     }
 

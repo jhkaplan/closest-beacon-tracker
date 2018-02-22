@@ -8,6 +8,7 @@ target 'Closest-Beacon' do
   # Pods for Closest-Beacon
 	pod 'Firebase/Core'
 	pod 'Firebase/Database'
+	pod 'Firebase/Analytics'
 
 
 end

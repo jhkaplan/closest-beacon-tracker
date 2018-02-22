@@ -6,16 +6,8 @@ target 'Closest-Beacon' do
   use_frameworks!
 
   # Pods for Closest-Beacon
-	'Firebase/Core'
+	pod 'Firebase/Core'
+	pod 'Firebase/Database'
 
-  target 'Closest-BeaconTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'Closest-BeaconUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
 
 end

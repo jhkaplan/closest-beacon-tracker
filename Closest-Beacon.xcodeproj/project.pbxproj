@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2D5E28AB2DA3FACE0695CD2B /* Pods_Closest_Beacon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA3CAABF9C831313F8D4BAA /* Pods_Closest_Beacon.framework */; };
-		85F463C74A7DB03AFD0BA0E1 /* Pods_Closest_BeaconUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5EA930082B41804E521202E /* Pods_Closest_BeaconUITests.framework */; };
-		901759EEE5DC498980A6DF56 /* Pods_Closest_BeaconTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B2694A0229013716179262A /* Pods_Closest_BeaconTests.framework */; };
 		9982F320203EFB5F0099CD2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9982F31F203EFB5F0099CD2D /* GoogleService-Info.plist */; };
 		99DB12C3203DC9580015872B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DB12C2203DC9580015872B /* AppDelegate.swift */; };
 		99DB12C5203DC9580015872B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DB12C4203DC9580015872B /* ViewController.swift */; };
@@ -39,12 +37,9 @@
 
 /* Begin PBXFileReference section */
 		1EA3CAABF9C831313F8D4BAA /* Pods_Closest_Beacon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Closest_Beacon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		27B4543F192BAEBA8CF03CF4 /* Pods-Closest-BeaconUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Closest-BeaconUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Closest-BeaconUITests/Pods-Closest-BeaconUITests.release.xcconfig"; sourceTree = "<group>"; };
 		523B8C153062FF194F085958 /* Pods-Closest-Beacon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Closest-Beacon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Closest-Beacon/Pods-Closest-Beacon.debug.xcconfig"; sourceTree = "<group>"; };
 		61D143097B9BE00E8E61CE6F /* Pods-Closest-Beacon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Closest-Beacon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Closest-Beacon/Pods-Closest-Beacon.release.xcconfig"; sourceTree = "<group>"; };
-		76CAEA6E326035601E6AE924 /* Pods-Closest-BeaconTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Closest-BeaconTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Closest-BeaconTests/Pods-Closest-BeaconTests.release.xcconfig"; sourceTree = "<group>"; };
 		7B2694A0229013716179262A /* Pods_Closest_BeaconTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Closest_BeaconTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		90374D4321074BEC6087F19B /* Pods-Closest-BeaconTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Closest-BeaconTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Closest-BeaconTests/Pods-Closest-BeaconTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9982F31F203EFB5F0099CD2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		99DB12BF203DC9580015872B /* Closest-Beacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Closest-Beacon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99DB12C2203DC9580015872B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +55,6 @@
 		99DB12E2203DC9580015872B /* Closest_BeaconUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closest_BeaconUITests.swift; sourceTree = "<group>"; };
 		99DB12E4203DC9580015872B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5EA930082B41804E521202E /* Pods_Closest_BeaconUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Closest_BeaconUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA6513657C4FA78D699C5DC0 /* Pods-Closest-BeaconUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Closest-BeaconUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Closest-BeaconUITests/Pods-Closest-BeaconUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				901759EEE5DC498980A6DF56 /* Pods_Closest_BeaconTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +77,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85F463C74A7DB03AFD0BA0E1 /* Pods_Closest_BeaconUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,10 +98,6 @@
 			children = (
 				523B8C153062FF194F085958 /* Pods-Closest-Beacon.debug.xcconfig */,
 				61D143097B9BE00E8E61CE6F /* Pods-Closest-Beacon.release.xcconfig */,
-				90374D4321074BEC6087F19B /* Pods-Closest-BeaconTests.debug.xcconfig */,
-				76CAEA6E326035601E6AE924 /* Pods-Closest-BeaconTests.release.xcconfig */,
-				FA6513657C4FA78D699C5DC0 /* Pods-Closest-BeaconUITests.debug.xcconfig */,
-				27B4543F192BAEBA8CF03CF4 /* Pods-Closest-BeaconUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -195,12 +183,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99DB12EA203DC9580015872B /* Build configuration list for PBXNativeTarget "Closest-BeaconTests" */;
 			buildPhases = (
-				ECEEEA32C0A6B52873FF548B /* [CP] Check Pods Manifest.lock */,
 				99DB12CF203DC9580015872B /* Sources */,
 				99DB12D0203DC9580015872B /* Frameworks */,
 				99DB12D1203DC9580015872B /* Resources */,
-				32C9C99DF9BB8114D1386EBC /* [CP] Embed Pods Frameworks */,
-				0CD46A61156A14E0980CB1DA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -216,12 +201,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99DB12ED203DC9580015872B /* Build configuration list for PBXNativeTarget "Closest-BeaconUITests" */;
 			buildPhases = (
-				A76C99715FF3987C229FCF8D /* [CP] Check Pods Manifest.lock */,
 				99DB12DA203DC9580015872B /* Sources */,
 				99DB12DB203DC9580015872B /* Frameworks */,
 				99DB12DC203DC9580015872B /* Resources */,
-				4C0F4C8985A1E4301B59E581 /* [CP] Embed Pods Frameworks */,
-				23A42D90ADF6145F9EEDCCF7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -313,75 +295,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0CD46A61156A14E0980CB1DA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Closest-BeaconTests/Pods-Closest-BeaconTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		23A42D90ADF6145F9EEDCCF7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Closest-BeaconUITests/Pods-Closest-BeaconUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		32C9C99DF9BB8114D1386EBC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Closest-BeaconTests/Pods-Closest-BeaconTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4C0F4C8985A1E4301B59E581 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Closest-BeaconUITests/Pods-Closest-BeaconUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7117FD42A4372A414BF5564D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Closest-Beacon/Pods-Closest-Beacon-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -415,42 +344,6 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Closest-Beacon-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A76C99715FF3987C229FCF8D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Closest-BeaconUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ECEEEA32C0A6B52873FF548B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Closest-BeaconTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -661,7 +554,6 @@
 		};
 		99DB12EB203DC9580015872B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90374D4321074BEC6087F19B /* Pods-Closest-BeaconTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -679,7 +571,6 @@
 		};
 		99DB12EC203DC9580015872B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76CAEA6E326035601E6AE924 /* Pods-Closest-BeaconTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -697,7 +588,6 @@
 		};
 		99DB12EE203DC9580015872B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA6513657C4FA78D699C5DC0 /* Pods-Closest-BeaconUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -714,7 +604,6 @@
 		};
 		99DB12EF203DC9580015872B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27B4543F192BAEBA8CF03CF4 /* Pods-Closest-BeaconUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

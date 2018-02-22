@@ -1,0 +1,6 @@
+framework module Pods_Closest_Beacon {
+  umbrella header "Pods-Closest-Beacon-umbrella.h"
+
+  export *
+  module * { export * }
+}

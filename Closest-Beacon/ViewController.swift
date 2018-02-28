@@ -10,9 +10,12 @@ import UIKit
 import CoreLocation
 import Firebase
 import FirebaseDatabase
+import FirebaseAuthUI
+import GoogleSignIn
 
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+
+class ViewController: UIViewController, CLLocationManagerDelegate, GIDSignInUIDelegate {
     @IBOutlet weak var locationName: UILabel!
     
     let locationManager = CLLocationManager()
@@ -29,19 +32,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationManager.delegate = self
+        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedAlways) {
+            locationManager.requestAlwaysAuthorization()
+        }
+        
+        locationManager.startRangingBeacons(in: region)
+        
+        
         // Start writing to database
         
         func post(){
             
             let user = "Josh"
             let currentBeacon = "Beacon"
-            let eventTime = NSDate().timeIntervalSince1970
+            let eventTime = NSDate().timeIntervalSince1970            
             
             
             let post :  [String : AnyObject] = ["user" : user as AnyObject,
                                                 "location" : currentBeacon as AnyObject,
                                                 "eventTime" : eventTime as AnyObject
-            ]
+                                                ]
             
             let databaseREF = Database.database().reference()
             
@@ -51,6 +62,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         post()
         
+<<<<<<< HEAD
         locationManager.delegate = self
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedAlways) {
             locationManager.requestAlwaysAuthorization()
@@ -58,15 +70,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager.startRangingBeacons(in: region)
         
+        // Add Google Sign in Button
         
         
+        let googleButton = GIDSignInButton()
+        googleButton.frame = CGRect(x: 16, y: 116, width: view.frame.width - 32, height: 50)
+        view.addSubview(googleButton)
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
+        
+=======
+>>>>>>> parent of 06f01e4... Start writing hardcoded data and time to Firebase
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         let knownBeacons = beacons.filter{ $0.proximity != CLProximity.unknown }
@@ -77,9 +98,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
     }
-    
-    
-    
 
 
 }

@@ -10,6 +10,7 @@ target 'Closest-Beacon' do
 	pod 'Firebase/Auth'
 	pod 'Firebase/Database'
 	pod 'Firebase/Analytics'
+	pod 'FirebaseUI/Google'
 
 
 end

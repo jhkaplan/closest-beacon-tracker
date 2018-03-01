@@ -10,12 +10,9 @@ import UIKit
 import CoreLocation
 import Firebase
 import FirebaseDatabase
-import FirebaseAuthUI
-import GoogleSignIn
 
 
-
-class ViewController: UIViewController, CLLocationManagerDelegate, GIDSignInUIDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var locationName: UILabel!
     
     let locationManager = CLLocationManager()
@@ -23,7 +20,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GIDSignInUIDe
     let colors = [
         38865: UIColor(red: 46/255, green: 49/255, blue: 146/255, alpha: 1),
         14477: UIColor(red: 159/255, green: 205/255, blue: 174/255, alpha: 1),
-    ]
+        ]
     let label = [
         38865: "Blueberry Office",
         14477: "Mint Benoit"
@@ -32,27 +29,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GIDSignInUIDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.delegate = self
-        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedAlways) {
-            locationManager.requestAlwaysAuthorization()
-        }
-        
-        locationManager.startRangingBeacons(in: region)
-        
-        
         // Start writing to database
         
         func post(){
             
             let user = "Josh"
             let currentBeacon = "Beacon"
-            let eventTime = NSDate().timeIntervalSince1970            
+            let eventTime = NSDate().timeIntervalSince1970
             
             
             let post :  [String : AnyObject] = ["user" : user as AnyObject,
                                                 "location" : currentBeacon as AnyObject,
                                                 "eventTime" : eventTime as AnyObject
-                                                ]
+            ]
             
             let databaseREF = Database.database().reference()
             
@@ -61,7 +50,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GIDSignInUIDe
         }
         
         post()
-
+        
         locationManager.delegate = self
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedAlways) {
             locationManager.requestAlwaysAuthorization()
@@ -69,20 +58,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GIDSignInUIDe
         
         locationManager.startRangingBeacons(in: region)
         
-        // Add Google Sign in Button
         
         
-        let googleButton = GIDSignInButton()
-        googleButton.frame = CGRect(x: 16, y: 116, width: view.frame.width - 32, height: 50)
-        view.addSubview(googleButton)
-        
-        GIDSignIn.sharedInstance().uiDelegate = self
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         let knownBeacons = beacons.filter{ $0.proximity != CLProximity.unknown }
@@ -93,7 +77,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GIDSignInUIDe
         }
         
     }
-
-
+    
+    
+    
+    
+    
 }
-

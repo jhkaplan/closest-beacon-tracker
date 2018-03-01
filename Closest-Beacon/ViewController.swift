@@ -61,7 +61,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GIDSignInUIDe
         }
         
         post()
-        
+
         locationManager.delegate = self
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedAlways) {
             locationManager.requestAlwaysAuthorization()

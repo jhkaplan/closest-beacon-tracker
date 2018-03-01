@@ -62,6 +62,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GIDSignInUIDe
         
         post()
         
+<<<<<<< HEAD
         locationManager.delegate = self
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedAlways) {
             locationManager.requestAlwaysAuthorization()
@@ -77,6 +78,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GIDSignInUIDe
         view.addSubview(googleButton)
         
         GIDSignIn.sharedInstance().uiDelegate = self
+=======
+>>>>>>> parent of 06f01e4... Start writing hardcoded data and time to Firebase
     }
 
     override func didReceiveMemoryWarning() {

@@ -10,12 +10,9 @@ import UIKit
 import CoreLocation
 import Firebase
 import FirebaseDatabase
-import FirebaseAuthUI
-import GoogleSignIn
 
 
-
-class ViewController: UIViewController, CLLocationManagerDelegate, GIDSignInUIDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var locationName: UILabel!
     
     let locationManager = CLLocationManager()
@@ -23,10 +20,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GIDSignInUIDe
     let colors = [
         38865: UIColor(red: 46/255, green: 49/255, blue: 146/255, alpha: 1),
         14477: UIColor(red: 159/255, green: 205/255, blue: 174/255, alpha: 1),
-    ]
+        9463: UIColor(red: 110/255, green: 206/255, blue: 245/255, alpha: 1),
+        37987: UIColor(red: 110/255, green: 206/255, blue: 245/255, alpha: 1),
+        ]
+    
     let label = [
-        38865: "Blueberry Office",
-        14477: "Mint Benoit"
+        38865: "Taylor's Office",
+        14477: "Benoit's Office",
+        9463: "Josh's Office",
+        37987: "Josh's Office"
     ]
     
     override func viewDidLoad() {
@@ -68,15 +70,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GIDSignInUIDe
         }
         
         locationManager.startRangingBeacons(in: region)
-        
-        // Add Google Sign in Button
-        
-        
-        let googleButton = GIDSignInButton()
-        googleButton.frame = CGRect(x: 16, y: 116, width: view.frame.width - 32, height: 50)
-        view.addSubview(googleButton)
-        
-        GIDSignIn.sharedInstance().uiDelegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -96,4 +89,3 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GIDSignInUIDe
 
 
 }
-

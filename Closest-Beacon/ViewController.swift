@@ -23,7 +23,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         9463: UIColor(red: 110/255, green: 206/255, blue: 245/255, alpha: 1),
         37987: UIColor(red: 110/255, green: 206/255, blue: 245/255, alpha: 1),
         ]
-    
+
     let label = [
         38865: "Taylor's Office",
         14477: "Benoit's Office",
@@ -34,27 +34,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.delegate = self
-        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedAlways) {
-            locationManager.requestAlwaysAuthorization()
-        }
-        
-        locationManager.startRangingBeacons(in: region)
-        
-        
         // Start writing to database
         
         func post(){
             
             let user = "Josh"
             let currentBeacon = "Beacon"
-            let eventTime = NSDate().timeIntervalSince1970            
+            let eventTime = NSDate().timeIntervalSince1970
             
             
             let post :  [String : AnyObject] = ["user" : user as AnyObject,
                                                 "location" : currentBeacon as AnyObject,
                                                 "eventTime" : eventTime as AnyObject
-                                                ]
+            ]
             
             let databaseREF = Database.database().reference()
             
@@ -63,7 +55,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         post()
-
+        
         locationManager.delegate = self
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedAlways) {
             locationManager.requestAlwaysAuthorization()
@@ -71,11 +63,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager.startRangingBeacons(in: region)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         let knownBeacons = beacons.filter{ $0.proximity != CLProximity.unknown }
@@ -86,6 +79,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
     }
-
-
+    
+    
+    
+    
+    
 }

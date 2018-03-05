@@ -15,6 +15,9 @@ import FirebaseDatabase
 class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var locationName: UILabel!
     
+    var currentBeaconID: Int? = 37987
+    
+    
     let locationManager = CLLocationManager()
     let region = CLBeaconRegion(proximityUUID: NSUUID(uuidString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")! as UUID, identifier: "Estimotes")
     let colors = [
@@ -24,7 +27,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         37987: UIColor(red: 110/255, green: 206/255, blue: 245/255, alpha: 1),
         ]
 
-    let label = [
+    let beaconLocation = [
         38865: "Taylor's Office",
         14477: "Benoit's Office",
         9463: "Josh's Office",
@@ -36,24 +39,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         // Start writing to database
         
-        func post(){
-            
-            let user = "Josh"
-            let currentBeacon = "Beacon"
-            let eventTime = NSDate().timeIntervalSince1970
-            
-            
-            let post :  [String : AnyObject] = ["user" : user as AnyObject,
-                                                "location" : currentBeacon as AnyObject,
-                                                "eventTime" : eventTime as AnyObject
-            ]
-            
-            let databaseREF = Database.database().reference()
-            
-            databaseREF.child("Locations").childByAutoId().setValue(post)
-            
-        }
-        
         post()
         
         locationManager.delegate = self
@@ -62,6 +47,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         locationManager.startRangingBeacons(in: region)
+    }
+    
+    // define post to Firebase function
+    
+    func post(){
+        
+        guard let beaconID = self.currentBeaconID else { return }
+        let user = "Josh"
+        let currentBeacon = self.beaconLocation[beaconID]
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        let eventTime = dateFormatter.string(from: Date())
+        
+        
+        let post :  [String : AnyObject] = ["user" : user as AnyObject,
+                                            "location" : currentBeacon as AnyObject,
+                                            "eventTime" : eventTime as AnyObject
+        ]
+        
+        let databaseREF = Database.database().reference()
+        
+        databaseREF.child("Locations").childByAutoId().setValue(post)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -75,7 +83,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if (knownBeacons.count > 0) {
             let closestBeacon = knownBeacons[0] as CLBeacon
             self.view.backgroundColor = self.colors[closestBeacon.minor.intValue]
-            self.locationName.text = self.label[closestBeacon.minor.intValue]
+            self.locationName.text = self.beaconLocation[closestBeacon.minor.intValue]
+            if self.currentBeaconID != closestBeacon.minor.intValue {
+                self.currentBeaconID = closestBeacon.minor.intValue
+                self.post()
+            }
         }
         
     }

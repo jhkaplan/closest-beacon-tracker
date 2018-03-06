@@ -18,25 +18,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVL-4U-jIi">
-                                <rect key="frame" x="33" y="131" width="309" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVL-4U-jIi">
+                                <rect key="frame" x="33" y="120" width="309" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BeaconID" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQS-WN-bn2">
+                                <rect key="frame" x="33" y="167.5" width="309" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BeaconProximity" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zK-5N-y5I">
+                                <rect key="frame" x="33" y="198.5" width="309" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BeaconRSSI" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tR-Zr-y3g">
+                                <rect key="frame" x="33" y="229.5" width="309" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UVL-4U-jIi" secondAttribute="trailing" constant="33" id="9uz-VK-M9D"/>
-                            <constraint firstItem="UVL-4U-jIi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="111" id="CVy-oI-P2I"/>
-                            <constraint firstItem="UVL-4U-jIi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="111" id="Pml-hh-9Id"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UVL-4U-jIi" secondAttribute="trailing" constant="33" id="eme-WR-cwi"/>
-                            <constraint firstItem="UVL-4U-jIi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="f25-1h-d2m"/>
-                            <constraint firstItem="UVL-4U-jIi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="lbz-Dm-N8V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3tR-Zr-y3g" secondAttribute="trailing" constant="33" id="2p2-U7-b58"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UVL-4U-jIi" secondAttribute="trailing" constant="33" id="6Dc-85-Arj"/>
+                            <constraint firstItem="JQS-WN-bn2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="8of-fg-Hgm"/>
+                            <constraint firstItem="UVL-4U-jIi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Bjl-mg-aPa"/>
+                            <constraint firstItem="3tR-Zr-y3g" firstAttribute="top" secondItem="3zK-5N-y5I" secondAttribute="bottom" constant="10" id="FKG-Ps-MGh"/>
+                            <constraint firstItem="3zK-5N-y5I" firstAttribute="top" secondItem="JQS-WN-bn2" secondAttribute="bottom" constant="10" id="G2A-ak-LwR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JQS-WN-bn2" secondAttribute="trailing" constant="33" id="Qbz-5W-YyB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3zK-5N-y5I" secondAttribute="trailing" constant="33" id="T14-Wf-FZi"/>
+                            <constraint firstItem="3tR-Zr-y3g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="adU-O0-dz8"/>
+                            <constraint firstItem="UVL-4U-jIi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="fCx-Pf-97f"/>
+                            <constraint firstItem="JQS-WN-bn2" firstAttribute="top" secondItem="UVL-4U-jIi" secondAttribute="bottom" constant="20" id="n93-OO-lXP"/>
+                            <constraint firstItem="3zK-5N-y5I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="uPY-Rf-XcL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3zK-5N-y5I" secondAttribute="trailing" constant="33" id="y4e-ET-Do8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="beaconProximity" destination="3zK-5N-y5I" id="rcP-Zo-JOU"/>
+                        <outlet property="beaconRSSI" destination="3tR-Zr-y3g" id="QLM-MS-Mdq"/>
                         <outlet property="locationName" destination="UVL-4U-jIi" id="Jek-6Y-HWV"/>
                     </connections>
                 </viewController>

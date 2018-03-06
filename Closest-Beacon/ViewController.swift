@@ -14,6 +14,10 @@ import FirebaseDatabase
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var locationName: UILabel!
+    @IBOutlet weak var beaconID: UILabel!
+    @IBOutlet weak var beaconProximity: UILabel!
+    @IBOutlet weak var beaconRSSI: UILabel!
+    
     
     var currentBeaconID: Int? = 37987
     
@@ -82,8 +86,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let knownBeacons = beacons.filter{ $0.proximity != CLProximity.unknown }
         if (knownBeacons.count > 0) {
             let closestBeacon = knownBeacons[0] as CLBeacon
+            let closestBeaconRSSI: Int = closestBeacon.rssi
+            let closestBeaconProximityValue = closestBeacon.proximity.rawValue
+            let closestBeaconMinorValue: Int = closestBeacon.minor.intValue
+           
+            
             self.view.backgroundColor = self.colors[closestBeacon.minor.intValue]
             self.locationName.text = self.beaconLocation[closestBeacon.minor.intValue]
+            // self.beaconID.text = "ID: \(closestBeaconMinorValue)"
+            self.beaconRSSI.text = "RSSI: \(closestBeaconRSSI)"
+            self.beaconProximity.text = "Proximity: \(closestBeaconProximityValue)"
+                       
+            
             if self.currentBeaconID != closestBeacon.minor.intValue {
                 self.currentBeaconID = closestBeacon.minor.intValue
                 self.post()
@@ -91,6 +105,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
     }
+    
     
     
     

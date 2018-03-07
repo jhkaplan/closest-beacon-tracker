@@ -16,6 +16,8 @@ class SignInVC: UIViewController {
     
     @IBAction func onSignInTapped(_ sender: Any) {
         
+       self.navigationController?.isNavigationBarHidden = true
+        
         guard let email = emailTextField.text,
         email != "",
         let password = passwordTextField.text,
@@ -30,6 +32,14 @@ class SignInVC: UIViewController {
                 AlertController.showAlert(self, title: "Error", message: error!.localizedDescription)
                 return
             }
+            
+            // If there is no error, assume user is successfully logged in.
+            
+            if(!(error != nil)) {
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.isUserLoggedIn = true
+            }
+            
             guard let user = user else { return }
             print(user.email ?? "Missing Email")
             print(user.displayName ?? "Missing Display Name")
@@ -40,6 +50,8 @@ class SignInVC: UIViewController {
         }
         
     }
+    
+    
     
     
 }

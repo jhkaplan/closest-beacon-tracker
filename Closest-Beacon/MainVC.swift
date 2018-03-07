@@ -24,7 +24,9 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         do {
             try firebaseAuth.signOut()
             print("User Signed Out")
-            // AlertController.showAlert(self, title: "Signed Out", message: "You are successfully signed out")
+            // Set user is logged out variable so next app load goes to login page
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.isUserLoggedIn = false
             self.performSegue(withIdentifier: "signOutSegue", sender: nil)
         }
         catch let signOutError as NSError {
@@ -53,6 +55,10 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Hide navigation Bar
+        
+        self.navigationController?.isNavigationBarHidden = true
         
         guard let userEmail = Auth.auth().currentUser?.email else { return }
         loggedInUserEmail.text = userEmail

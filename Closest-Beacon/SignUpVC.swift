@@ -37,6 +37,15 @@ class SignUpVC: UIViewController {
                 AlertController.showAlert(self, title: "Error", message: error!.localizedDescription)
                 return
             }
+            
+            // If there is no error, assume user is successfully logged in.
+            if(!(error != nil)) {
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.isUserLoggedIn = true
+            }
+            
+            
+            
             guard let user = user else { return }
             print(user.email ?? "Missing Email")
             print(user.uid)

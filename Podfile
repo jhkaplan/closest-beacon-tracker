@@ -6,6 +6,7 @@ target 'Closest-Beacon' do
   use_frameworks!
 
   # Pods for Closest-Beacon
+	pod 'Firebase'
 	pod 'Firebase/Core'
 	pod 'Firebase/Auth'
 	pod 'Firebase/Database'

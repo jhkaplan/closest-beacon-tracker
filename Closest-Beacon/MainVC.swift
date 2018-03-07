@@ -12,8 +12,25 @@ import Firebase
 import FirebaseDatabase
 
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class MainVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var locationName: UILabel!
+    
+    @IBOutlet weak var loggedInUserEmail: UILabel!
+    
+    //Sign out a user
+    
+    @IBAction func onSignOutTapped(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            print("User Signed Out")
+            // AlertController.showAlert(self, title: "Signed Out", message: "You are successfully signed out")
+            self.performSegue(withIdentifier: "signOutSegue", sender: nil)
+        }
+        catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+    }
     
     var currentBeaconID: Int? = 37987
     
@@ -36,6 +53,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let userEmail = Auth.auth().currentUser?.email else { return }
+        loggedInUserEmail.text = userEmail
         
         // Start writing to database
         
@@ -91,9 +111,4 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
     }
-    
-    
-    
-    
-    
 }

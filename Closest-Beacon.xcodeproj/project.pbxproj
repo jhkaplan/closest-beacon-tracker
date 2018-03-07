@@ -10,12 +10,15 @@
 		2D5E28AB2DA3FACE0695CD2B /* Pods_Closest_Beacon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA3CAABF9C831313F8D4BAA /* Pods_Closest_Beacon.framework */; };
 		9982F320203EFB5F0099CD2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9982F31F203EFB5F0099CD2D /* GoogleService-Info.plist */; };
 		99DB12C3203DC9580015872B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DB12C2203DC9580015872B /* AppDelegate.swift */; };
-		99DB12C5203DC9580015872B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DB12C4203DC9580015872B /* ViewController.swift */; };
+		99DB12C5203DC9580015872B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DB12C4203DC9580015872B /* MainVC.swift */; };
 		99DB12C8203DC9580015872B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99DB12C6203DC9580015872B /* Main.storyboard */; };
 		99DB12CA203DC9580015872B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99DB12C9203DC9580015872B /* Assets.xcassets */; };
 		99DB12CD203DC9580015872B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99DB12CB203DC9580015872B /* LaunchScreen.storyboard */; };
 		99DB12D8203DC9580015872B /* Closest_BeaconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DB12D7203DC9580015872B /* Closest_BeaconTests.swift */; };
 		99DB12E3203DC9580015872B /* Closest_BeaconUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DB12E2203DC9580015872B /* Closest_BeaconUITests.swift */; };
+		99E08DA5204F78A70004588F /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E08DA4204F78A70004588F /* AlertController.swift */; };
+		99E2184C204F6F810060959C /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E2184B204F6F810060959C /* SignUpVC.swift */; };
+		99E2184E204F6F8C0060959C /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E2184D204F6F8C0060959C /* SignInVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +46,7 @@
 		9982F31F203EFB5F0099CD2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		99DB12BF203DC9580015872B /* Closest-Beacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Closest-Beacon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99DB12C2203DC9580015872B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		99DB12C4203DC9580015872B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		99DB12C4203DC9580015872B /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		99DB12C7203DC9580015872B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		99DB12C9203DC9580015872B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99DB12CC203DC9580015872B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +57,9 @@
 		99DB12DE203DC9580015872B /* Closest-BeaconUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Closest-BeaconUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99DB12E2203DC9580015872B /* Closest_BeaconUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closest_BeaconUITests.swift; sourceTree = "<group>"; };
 		99DB12E4203DC9580015872B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99E08DA4204F78A70004588F /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		99E2184B204F6F810060959C /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		99E2184D204F6F8C0060959C /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		C5EA930082B41804E521202E /* Pods_Closest_BeaconUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Closest_BeaconUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -128,7 +134,10 @@
 			isa = PBXGroup;
 			children = (
 				99DB12C2203DC9580015872B /* AppDelegate.swift */,
-				99DB12C4203DC9580015872B /* ViewController.swift */,
+				99E2184B204F6F810060959C /* SignUpVC.swift */,
+				99E08DA4204F78A70004588F /* AlertController.swift */,
+				99E2184D204F6F8C0060959C /* SignInVC.swift */,
+				99DB12C4203DC9580015872B /* MainVC.swift */,
 				99DB12C6203DC9580015872B /* Main.storyboard */,
 				99DB12C9203DC9580015872B /* Assets.xcassets */,
 				99DB12CB203DC9580015872B /* LaunchScreen.storyboard */,
@@ -368,7 +377,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99DB12C5203DC9580015872B /* ViewController.swift in Sources */,
+				99DB12C5203DC9580015872B /* MainVC.swift in Sources */,
+				99E08DA5204F78A70004588F /* AlertController.swift in Sources */,
+				99E2184C204F6F810060959C /* SignUpVC.swift in Sources */,
+				99E2184E204F6F8C0060959C /* SignInVC.swift in Sources */,
 				99DB12C3203DC9580015872B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -74,7 +74,7 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
     func post(){
         
         guard let beaconID = self.currentBeaconID else { return }
-        let user = "Josh"
+        guard let user: String = Auth.auth().currentUser?.email else { return }
         let currentBeacon = self.beaconLocation[beaconID]
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"

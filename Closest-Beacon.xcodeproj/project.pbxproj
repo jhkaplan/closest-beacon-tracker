@@ -135,10 +135,10 @@
 			children = (
 				99DB12C2203DC9580015872B /* AppDelegate.swift */,
 				99E2184B204F6F810060959C /* SignUpVC.swift */,
-				99E08DA4204F78A70004588F /* AlertController.swift */,
 				99E2184D204F6F8C0060959C /* SignInVC.swift */,
 				99DB12C4203DC9580015872B /* MainVC.swift */,
 				99DB12C6203DC9580015872B /* Main.storyboard */,
+				99E08DA4204F78A70004588F /* AlertController.swift */,
 				99DB12C9203DC9580015872B /* Assets.xcassets */,
 				99DB12CB203DC9580015872B /* LaunchScreen.storyboard */,
 				99DB12CE203DC9580015872B /* Info.plist */,

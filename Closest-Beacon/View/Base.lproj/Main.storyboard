@@ -59,11 +59,19 @@
                                     <segue destination="Ns2-27-hFt" kind="show" id="nNz-LE-lUS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dK-Vy-hVo">
+                                <rect key="frame" x="149" y="598" width="77" height="30"/>
+                                <state key="normal" title="View Users"/>
+                                <connections>
+                                    <segue destination="NWT-5m-X8J" kind="showDetail" identifier="viewUsersSegue" action="showViewController:sender:" id="lVS-d1-TfV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aYT-Jt-MFs" firstAttribute="leading" secondItem="wlM-2J-Xvp" secondAttribute="leading" constant="50" id="37a-Ql-tXn"/>
                             <constraint firstItem="wlI-2Z-ohI" firstAttribute="top" secondItem="wlM-2J-Xvp" secondAttribute="top" constant="40" id="59P-yp-4Ps"/>
+                            <constraint firstItem="wlM-2J-Xvp" firstAttribute="bottom" secondItem="9dK-Vy-hVo" secondAttribute="bottom" constant="39" id="6qH-Oi-JJd"/>
                             <constraint firstItem="70i-yb-VVO" firstAttribute="leading" secondItem="wlM-2J-Xvp" secondAttribute="leading" constant="50" id="9qV-OO-DJO"/>
                             <constraint firstItem="wlM-2J-Xvp" firstAttribute="trailing" secondItem="aYT-Jt-MFs" secondAttribute="trailing" constant="50" id="BIb-c9-NXu"/>
                             <constraint firstItem="ATe-ik-LzU" firstAttribute="top" secondItem="uah-7E-0v6" secondAttribute="bottom" constant="20" id="GSh-Dn-i5w"/>
@@ -74,7 +82,9 @@
                             <constraint firstItem="wlM-2J-Xvp" firstAttribute="trailing" secondItem="ATe-ik-LzU" secondAttribute="trailing" constant="16" id="WHP-73-AC0"/>
                             <constraint firstItem="wlM-2J-Xvp" firstAttribute="trailing" secondItem="aYT-Jt-MFs" secondAttribute="trailing" constant="50" id="WUC-y4-SFP"/>
                             <constraint firstItem="uah-7E-0v6" firstAttribute="top" secondItem="wlI-2Z-ohI" secondAttribute="bottom" constant="50" id="Wmh-ys-o06"/>
+                            <constraint firstItem="9dK-Vy-hVo" firstAttribute="leading" secondItem="wlM-2J-Xvp" secondAttribute="leading" constant="149" id="fiy-WG-Mge"/>
                             <constraint firstItem="wlM-2J-Xvp" firstAttribute="trailing" secondItem="uah-7E-0v6" secondAttribute="trailing" constant="16" id="jHQ-UH-X71"/>
+                            <constraint firstItem="wlM-2J-Xvp" firstAttribute="trailing" secondItem="9dK-Vy-hVo" secondAttribute="trailing" constant="149" id="nwF-sY-0o0"/>
                             <constraint firstItem="aYT-Jt-MFs" firstAttribute="leading" secondItem="wlM-2J-Xvp" secondAttribute="leading" constant="50" id="o06-NL-NgV"/>
                             <constraint firstItem="70i-yb-VVO" firstAttribute="top" secondItem="aYT-Jt-MFs" secondAttribute="bottom" constant="20" id="sws-wY-e34"/>
                             <constraint firstItem="wlI-2Z-ohI" firstAttribute="leading" secondItem="wlM-2J-Xvp" secondAttribute="leading" constant="16" id="t34-aL-Bxb"/>
@@ -244,9 +254,37 @@
             </objects>
             <point key="canvasLocation" x="984.79999999999995" y="289.20539730134936"/>
         </scene>
+        <!--Users TableVC-->
+        <scene sceneID="kiS-PI-hjj">
+            <objects>
+                <tableViewController storyboardIdentifier="UsersTableVC" id="NWT-5m-X8J" customClass="usersTableVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Uwq-Pn-jiA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kMx-a5-CI1">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kMx-a5-CI1" id="G2z-9V-Hi5">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NWT-5m-X8J" id="LPC-jU-TYs"/>
+                            <outlet property="delegate" destination="NWT-5m-X8J" id="bmY-UH-Cz7"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C5e-OM-vKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="894" y="1084"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6m8-3u-LVZ"/>
-        <segue reference="Exc-Tp-MOI"/>
+        <segue reference="JKU-8v-RwL"/>
+        <segue reference="I3g-oq-CaX"/>
     </inferredMetricsTieBreakers>
 </document>

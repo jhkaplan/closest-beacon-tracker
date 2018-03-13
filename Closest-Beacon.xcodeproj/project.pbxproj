@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2D5E28AB2DA3FACE0695CD2B /* Pods_Closest_Beacon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA3CAABF9C831313F8D4BAA /* Pods_Closest_Beacon.framework */; };
+		992C93D02052EB7000869561 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992C93CF2052EB7000869561 /* UserTableViewController.swift */; };
+		992C93D22052ED8300869561 /* UserListCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992C93D12052ED8300869561 /* UserListCellData.swift */; };
+		992C93D42052EE2200869561 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992C93D32052EE2200869561 /* Data.swift */; };
+		992C93D62052FA8800869561 /* CustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992C93D52052FA8800869561 /* CustomTableCell.swift */; };
 		9982F320203EFB5F0099CD2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9982F31F203EFB5F0099CD2D /* GoogleService-Info.plist */; };
 		99DB12C3203DC9580015872B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DB12C2203DC9580015872B /* AppDelegate.swift */; };
 		99DB12C5203DC9580015872B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DB12C4203DC9580015872B /* MainVC.swift */; };
@@ -43,6 +47,10 @@
 		523B8C153062FF194F085958 /* Pods-Closest-Beacon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Closest-Beacon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Closest-Beacon/Pods-Closest-Beacon.debug.xcconfig"; sourceTree = "<group>"; };
 		61D143097B9BE00E8E61CE6F /* Pods-Closest-Beacon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Closest-Beacon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Closest-Beacon/Pods-Closest-Beacon.release.xcconfig"; sourceTree = "<group>"; };
 		7B2694A0229013716179262A /* Pods_Closest_BeaconTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Closest_BeaconTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		992C93CF2052EB7000869561 /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
+		992C93D12052ED8300869561 /* UserListCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCellData.swift; sourceTree = "<group>"; };
+		992C93D32052EE2200869561 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		992C93D52052FA8800869561 /* CustomTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableCell.swift; sourceTree = "<group>"; };
 		9982F31F203EFB5F0099CD2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		99DB12BF203DC9580015872B /* Closest-Beacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Closest-Beacon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99DB12C2203DC9580015872B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +116,38 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		992C93CA2052E9F700869561 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				992C93D32052EE2200869561 /* Data.swift */,
+				992C93D12052ED8300869561 /* UserListCellData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		992C93CB2052EA2900869561 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				99DB12C6203DC9580015872B /* Main.storyboard */,
+				99DB12CB203DC9580015872B /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		992C93CC2052EA2D00869561 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				992C93CF2052EB7000869561 /* UserTableViewController.swift */,
+				992C93D52052FA8800869561 /* CustomTableCell.swift */,
+				99DB12C2203DC9580015872B /* AppDelegate.swift */,
+				99E2184D204F6F8C0060959C /* SignInVC.swift */,
+				99E2184B204F6F810060959C /* SignUpVC.swift */,
+				99DB12C4203DC9580015872B /* MainVC.swift */,
+				99E08DA4204F78A70004588F /* AlertController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		99DB12B6203DC9580015872B = {
 			isa = PBXGroup;
 			children = (
@@ -133,14 +173,10 @@
 		99DB12C1203DC9580015872B /* Closest-Beacon */ = {
 			isa = PBXGroup;
 			children = (
-				99DB12C2203DC9580015872B /* AppDelegate.swift */,
-				99E2184D204F6F8C0060959C /* SignInVC.swift */,
-				99E2184B204F6F810060959C /* SignUpVC.swift */,
-				99DB12C4203DC9580015872B /* MainVC.swift */,
-				99DB12C6203DC9580015872B /* Main.storyboard */,
-				99E08DA4204F78A70004588F /* AlertController.swift */,
+				992C93CA2052E9F700869561 /* Model */,
+				992C93CB2052EA2900869561 /* View */,
+				992C93CC2052EA2D00869561 /* Controller */,
 				99DB12C9203DC9580015872B /* Assets.xcassets */,
-				99DB12CB203DC9580015872B /* LaunchScreen.storyboard */,
 				99DB12CE203DC9580015872B /* Info.plist */,
 				9982F31F203EFB5F0099CD2D /* GoogleService-Info.plist */,
 			);
@@ -379,9 +415,13 @@
 			files = (
 				99DB12C5203DC9580015872B /* MainVC.swift in Sources */,
 				99E08DA5204F78A70004588F /* AlertController.swift in Sources */,
+				992C93D62052FA8800869561 /* CustomTableCell.swift in Sources */,
 				99E2184C204F6F810060959C /* SignUpVC.swift in Sources */,
+				992C93D22052ED8300869561 /* UserListCellData.swift in Sources */,
+				992C93D02052EB7000869561 /* UserTableViewController.swift in Sources */,
 				99E2184E204F6F8C0060959C /* SignInVC.swift in Sources */,
 				99DB12C3203DC9580015872B /* AppDelegate.swift in Sources */,
+				992C93D42052EE2200869561 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,4 +6,13 @@
 //  Copyright © 2018 Josh Kaplan. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+/* struct userListCellData {
+    let userName: String
+    let userCurrentLocation: String
+    let userLocationTimestamp: String
+    let image: UIImage?
+    
+}
+*/

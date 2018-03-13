@@ -13,6 +13,9 @@ class SignInVC: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBAction func onUserTableViewTapped(_ sender: Any) {
+    }
+    
     
     @IBAction func onSignInTapped(_ sender: Any) {
         

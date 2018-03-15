@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //used to determine what viewController to present when the app loads
     //this boolean is saved locally
     
+
+    
     public var isUserLoggedIn: Bool {
         get {
             print("Returning Bool")
@@ -32,36 +34,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+
     // this gets a reference to the storyboard
     var storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        // Start setting initial view if user is logged in (from Finn)
         
-        var initialViewController:UIViewController
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
         
-        // if user is already logged in, set initial view controller as MainVC
+        window?.rootViewController =
+            UINavigationController(rootViewController: UserLocationTableVC())
         
-        if(isUserLoggedIn) {
-            initialViewController = storyBoard.instantiateViewController(withIdentifier: "MainVC") as! MainVC
-        }
-        
-        // if user is NOT logged in, then set first viewController as SignInVC
-        else {
-            initialViewController = storyBoard.instantiateViewController(withIdentifier: "SignInVC") as! SignInVC
-        }
-        
-        // Make the initialVC a Navigation Controller - allows to perform the push segues
-        
-        let navigationInitialController = UINavigationController(rootViewController: initialViewController)
-        
-        self.window = UIWindow()
-        
-        // The rootViewController is the first viewController that is presented by the app
-        self.window?.rootViewController = navigationInitialController
-        self.window?.makeKeyAndVisible()
+
+//        // Start setting initial view if user is logged in (from Finn)
+//
+//        var initialViewController:UIViewController
+//
+//        // if user is already logged in, set initial view controller as MainVC
+//
+//        if(isUserLoggedIn) {
+//            initialViewController = storyBoard.instantiateViewController(withIdentifier: "MainVC") as! MainVC
+//        }
+//
+//        // if user is NOT logged in, then set first viewController as SignInVC
+//        else {
+//            initialViewController = storyBoard.instantiateViewController(withIdentifier: "SigninVC") as! SignInVC
+//        }
+//
+//        // Make the initialVC a Navigation Controller - allows to perform the push segues
+//
+//        let navigationInitialController = UINavigationController(rootViewController: initialViewController)
+//
+//        self.window = UIWindow()
+//
+//        // The rootViewController is the first viewController that is presented by the app
+//        self.window?.rootViewController = navigationInitialController
+//        self.window?.makeKeyAndVisible()
+ 
+ 
         
         
         // Override point for customization after application launch.

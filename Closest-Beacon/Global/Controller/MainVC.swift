@@ -14,12 +14,12 @@ import FirebaseDatabase
 
 class MainVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var locationName: UILabel!
-    
     @IBOutlet weak var loggedInUserEmail: UILabel!
+    
     
     //Sign out a user
     
-    @IBAction func onSignOutTapped(_ sender: Any) {
+     func signOutUser() {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
@@ -33,6 +33,11 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
             print("Error signing out: %@", signOutError)
         }
     }
+    
+    @IBAction func onSignOutTapped(_ sender: Any) {
+        signOutUser()
+    }
+ 
     
     var currentBeaconID: Int? = 37987
     
@@ -55,6 +60,8 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         // Hide navigation Bar
         

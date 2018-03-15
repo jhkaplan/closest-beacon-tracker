@@ -38,6 +38,7 @@ class SignUpVC: UIViewController {
                 return
             }
             
+            
             // If there is no error, assume user is successfully logged in.
             if(!(error != nil)) {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -61,6 +62,7 @@ class SignUpVC: UIViewController {
                 self.performSegue(withIdentifier: "signUpSegue", sender: nil)
                 
             })
+ 
             
         }
     }

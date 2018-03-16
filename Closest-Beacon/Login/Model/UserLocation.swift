@@ -14,5 +14,23 @@ class UserLocation: NSObject {
     var location: String?
     var eventTime: String?
     //    var userAvatar: UIImage
+    
+    override func setValue(_ value: Any?, forKey key: String) {
+        switch key {
+        case "eventTime": self.eventTime = value as? String
+        case "user": self.userName = value as? String
+        case "location": self.location = value as? String
+        default: return
+        }
+    }
+    
+    override func value(forKey key: String) -> Any? {
+        switch  key {
+        case "eventTime": return self.eventTime
+        case "user": return self.userName
+        case "location": return self.location
+        default: return nil
+        }
+    }
 
 }

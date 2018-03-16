@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+
 class UserLocationTableVC: UITableViewController {
     
     let cellId = "cellId"
@@ -76,6 +77,8 @@ class UserLocationTableVC: UITableViewController {
         
         return cell
     }
+    
+    
 
 
 }

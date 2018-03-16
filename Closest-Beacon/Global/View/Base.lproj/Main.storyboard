@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -223,7 +222,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="View User Location List"/>
                                 <connections>
-                                    <segue destination="CAK-qk-RiY" kind="show" id="xFa-Fb-svh"/>
+                                    <action selector="viewUserLocationTableOnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xpc-YY-yoZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -252,14 +251,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1806" y="288"/>
-        </scene>
-        <!--UserLocationListSB-->
-        <scene sceneID="519-rM-JVr">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="UserLocationListSB" storyboardName="UserLocationTable" referencedIdentifier="UserLocationListSB" id="CAK-qk-RiY" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="get-yT-T48" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2446" y="288"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TOu-zh-24l">

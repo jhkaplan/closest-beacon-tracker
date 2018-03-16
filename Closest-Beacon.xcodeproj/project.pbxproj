@@ -136,7 +136,6 @@
 		992BD40420597025003E8F0C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				992BD40520597034003E8F0C /* UserLocationTableVC.swift */,
 				992BD40720597697003E8F0C /* LoginController.swift */,
 			);
 			path = Controller;
@@ -145,7 +144,6 @@
 		992BD40C2059EDE5003E8F0C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				992BD40F2059F656003E8F0C /* UserLocation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,6 +162,7 @@
 		99B7E3012058809D00A69487 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				992BD40F2059F656003E8F0C /* UserLocation.swift */,
 				99B7E3132058995400A69487 /* LocationData.swift */,
 				99B7E3112058899600A69487 /* UserListCell.swift */,
 			);
@@ -181,6 +180,7 @@
 		99B7E303205880C200A69487 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				992BD40520597034003E8F0C /* UserLocationTableVC.swift */,
 				99B7E30E2058828000A69487 /* UserLocationVC.swift */,
 			);
 			path = Controller;

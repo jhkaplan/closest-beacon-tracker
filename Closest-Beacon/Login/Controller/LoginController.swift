@@ -51,7 +51,8 @@ class LoginController: UIViewController {
                 return
             }
             
-            self.dismiss(animated: true, completion: nil)
+            //self.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "PresentMAINVC", sender: nil)
         }
     }
     

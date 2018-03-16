@@ -80,6 +80,7 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         }
         
         locationManager.startRangingBeacons(in: region)
+        
     }
     
     // define post to Firebase function

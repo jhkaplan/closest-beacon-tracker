@@ -47,6 +47,7 @@ class UserLocationTableVC: UITableViewController {
         Database.database().reference().child("Locations").observe(.childAdded, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 let location = UserLocation()
+                print(dictionary)
                 location.setValuesForKeys(dictionary)
             }
 //            print(snapshot)

@@ -49,30 +49,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UINavigationController(rootViewController: UserLocationTableVC())
         
 
-//        // Start setting initial view if user is logged in (from Finn)
-//
-//        var initialViewController:UIViewController
-//
-//        // if user is already logged in, set initial view controller as MainVC
-//
-//        if(isUserLoggedIn) {
-//            initialViewController = storyBoard.instantiateViewController(withIdentifier: "MainVC") as! MainVC
-//        }
-//
-//        // if user is NOT logged in, then set first viewController as SignInVC
-//        else {
-//            initialViewController = storyBoard.instantiateViewController(withIdentifier: "SigninVC") as! SignInVC
-//        }
-//
-//        // Make the initialVC a Navigation Controller - allows to perform the push segues
-//
-//        let navigationInitialController = UINavigationController(rootViewController: initialViewController)
-//
-//        self.window = UIWindow()
-//
-//        // The rootViewController is the first viewController that is presented by the app
-//        self.window?.rootViewController = navigationInitialController
-//        self.window?.makeKeyAndVisible()
+        // Start setting initial view if user is logged in (from Finn)
+
+        var initialViewController:UIViewController
+
+        // if user is already logged in, set initial view controller as MainVC
+
+        if(isUserLoggedIn) {
+            initialViewController = storyBoard.instantiateViewController(withIdentifier: "MainVC") as! MainVC
+        }
+
+        // if user is NOT logged in, then set first viewController as SignInVC
+        else {
+            initialViewController = storyBoard.instantiateViewController(withIdentifier: "SigninVC") as! SignInVC
+        }
+
+        // Make the initialVC a Navigation Controller - allows to perform the push segues
+
+        let navigationInitialController = UINavigationController(rootViewController: initialViewController)
+
+        self.window = UIWindow()
+
+        // The rootViewController is the first viewController that is presented by the app
+        self.window?.rootViewController = navigationInitialController
+        self.window?.makeKeyAndVisible()
  
  
         

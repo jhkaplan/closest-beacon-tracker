@@ -35,7 +35,8 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func onSignOutTapped(_ sender: Any) {
-        signOutUser()
+//        signOutUser()
+        handleLogout()
     }
  
     
@@ -81,6 +82,16 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         
         locationManager.startRangingBeacons(in: region)
         
+    }
+    
+    @objc func handleLogout() {
+        do {
+            try Auth.auth().signOut()
+        } catch let logoutError {
+            print(logoutError)
+        }
+        let loginController = LoginController()
+        present(loginController,animated: true, completion: nil)
     }
     
     // define post to Firebase function

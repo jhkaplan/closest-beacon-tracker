@@ -13,7 +13,7 @@
 		992BD4102059F656003E8F0C /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992BD40F2059F656003E8F0C /* UserLocation.swift */; };
 		9982F320203EFB5F0099CD2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9982F31F203EFB5F0099CD2D /* GoogleService-Info.plist */; };
 		99B7E305205880E800A69487 /* UserLocationTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B7E304205880E800A69487 /* UserLocationTable.storyboard */; };
-		99B7E30F2058828000A69487 /* UserLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B7E30E2058828000A69487 /* UserLocationVC.swift */; };
+		99B7E30F2058828000A69487 /* _UserLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B7E30E2058828000A69487 /* _UserLocationVC.swift */; };
 		99B7E3122058899600A69487 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B7E3112058899600A69487 /* UserListCell.swift */; };
 		99B7E3142058995400A69487 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B7E3132058995400A69487 /* LocationData.swift */; };
 		99B7E3162058A0EA00A69487 /* FirDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B7E3152058A0EA00A69487 /* FirDatabaseService.swift */; };
@@ -25,8 +25,8 @@
 		99DB12D8203DC9580015872B /* Closest_BeaconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DB12D7203DC9580015872B /* Closest_BeaconTests.swift */; };
 		99DB12E3203DC9580015872B /* Closest_BeaconUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DB12E2203DC9580015872B /* Closest_BeaconUITests.swift */; };
 		99E08DA5204F78A70004588F /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E08DA4204F78A70004588F /* AlertController.swift */; };
-		99E2184C204F6F810060959C /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E2184B204F6F810060959C /* SignUpVC.swift */; };
-		99E2184E204F6F8C0060959C /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E2184D204F6F8C0060959C /* SignInVC.swift */; };
+		99E2184C204F6F810060959C /* _SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E2184B204F6F810060959C /* _SignUpVC.swift */; };
+		99E2184E204F6F8C0060959C /* _SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E2184D204F6F8C0060959C /* _SignInVC.swift */; };
 		B4868330205C157400388669 /* Main_.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B486832F205C157400388669 /* Main_.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +57,7 @@
 		992BD40F2059F656003E8F0C /* UserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
 		9982F31F203EFB5F0099CD2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		99B7E304205880E800A69487 /* UserLocationTable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserLocationTable.storyboard; sourceTree = "<group>"; };
-		99B7E30E2058828000A69487 /* UserLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationVC.swift; sourceTree = "<group>"; };
+		99B7E30E2058828000A69487 /* _UserLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UserLocationVC.swift; sourceTree = "<group>"; };
 		99B7E3112058899600A69487 /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
 		99B7E3132058995400A69487 /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
 		99B7E3152058A0EA00A69487 /* FirDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirDatabaseService.swift; sourceTree = "<group>"; };
@@ -75,8 +75,8 @@
 		99DB12E2203DC9580015872B /* Closest_BeaconUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closest_BeaconUITests.swift; sourceTree = "<group>"; };
 		99DB12E4203DC9580015872B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99E08DA4204F78A70004588F /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
-		99E2184B204F6F810060959C /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
-		99E2184D204F6F8C0060959C /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		99E2184B204F6F810060959C /* _SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _SignUpVC.swift; sourceTree = "<group>"; };
+		99E2184D204F6F8C0060959C /* _SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _SignInVC.swift; sourceTree = "<group>"; };
 		B486832F205C157400388669 /* Main_.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main_.storyboard; sourceTree = "<group>"; };
 		C5EA930082B41804E521202E /* Pods_Closest_BeaconUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Closest_BeaconUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -181,7 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				992BD40520597034003E8F0C /* UserLocationTableVC.swift */,
-				99B7E30E2058828000A69487 /* UserLocationVC.swift */,
+				99B7E30E2058828000A69487 /* _UserLocationVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -246,8 +246,8 @@
 				992BD40C2059EDE5003E8F0C /* Model */,
 				992BD40420597025003E8F0C /* Controller */,
 				992BD3FD205969AD003E8F0C /* View */,
-				99E2184D204F6F8C0060959C /* SignInVC.swift */,
-				99E2184B204F6F810060959C /* SignUpVC.swift */,
+				99E2184D204F6F8C0060959C /* _SignInVC.swift */,
+				99E2184B204F6F810060959C /* _SignUpVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -524,11 +524,11 @@
 				99E08DA5204F78A70004588F /* AlertController.swift in Sources */,
 				992BD40620597034003E8F0C /* UserLocationTableVC.swift in Sources */,
 				992BD4102059F656003E8F0C /* UserLocation.swift in Sources */,
-				99B7E30F2058828000A69487 /* UserLocationVC.swift in Sources */,
+				99B7E30F2058828000A69487 /* _UserLocationVC.swift in Sources */,
 				99B7E3162058A0EA00A69487 /* FirDatabaseService.swift in Sources */,
-				99E2184C204F6F810060959C /* SignUpVC.swift in Sources */,
+				99E2184C204F6F810060959C /* _SignUpVC.swift in Sources */,
 				99B7E3142058995400A69487 /* LocationData.swift in Sources */,
-				99E2184E204F6F8C0060959C /* SignInVC.swift in Sources */,
+				99E2184E204F6F8C0060959C /* _SignInVC.swift in Sources */,
 				99DB12C3203DC9580015872B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

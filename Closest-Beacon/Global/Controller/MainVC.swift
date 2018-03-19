@@ -68,6 +68,8 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         // Hide navigation Bar
         
         self.navigationController?.isNavigationBarHidden = false
+        self.navigationItem.hidesBackButton = true
+        
         
         guard let userEmail = Auth.auth().currentUser?.email else { return }
         loggedInUserEmail.text = userEmail
@@ -89,9 +91,15 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         viewUserLocationTable()
     }
     
+    @IBAction func viewUesrLocationTableOnTapped2(_ sender: Any) {
+        viewUserLocationTable()
+    }
+    
+    
     func viewUserLocationTable() {
         let viewController = UserLocationTableVC()
-        present(viewController, animated: true, completion: nil)
+        show(viewController, sender: self)
+        // present(viewController, animated: true, completion: nil)
     }
     
     

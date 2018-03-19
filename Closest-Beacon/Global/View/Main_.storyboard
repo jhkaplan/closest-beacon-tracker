@@ -21,7 +21,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="NPR-xw-cE6"/>
                     <connections>
-                        <segue destination="CkW-Dx-Yhb" kind="presentation" identifier="PresentMAINVC" id="NcD-2E-gM8"/>
+                        <segue destination="CkW-Dx-Yhb" kind="show" identifier="PresentMAINVC" id="NcD-2E-gM8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtG-Oo-7Vj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HT0-ep-dJh">
-                                <rect key="frame" x="33" y="131" width="309" height="0.0"/>
+                                <rect key="frame" x="33" y="175" width="309" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -60,7 +60,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="View User Location List"/>
                                 <connections>
-                                    <segue destination="E4G-mS-b0R" kind="show" id="fDO-Cy-3lD"/>
+                                    <action selector="viewUesrLocationTableOnTapped2:" destination="CkW-Dx-Yhb" eventType="touchUpInside" id="BD1-HL-I5c"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -87,14 +87,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Alz-OT-oSk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="551" y="-188"/>
-        </scene>
-        <!--UserLocationListSB-->
-        <scene sceneID="dGm-h8-hh2">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="UserLocationListSB" storyboardName="UserLocationTable" referencedIdentifier="UserLocationListSB" id="E4G-mS-b0R" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uim-Ex-rwi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1154" y="-190"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Qy-Ox-SYh">

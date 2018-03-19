@@ -13,10 +13,11 @@ import Firebase
 class UserLocationTableVC: UITableViewController {
     
     let cellId = "cellId"
-    var location = [UserLocation]()
+    var userLocationsList = [UserLocation]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
@@ -32,14 +33,6 @@ class UserLocationTableVC: UITableViewController {
             perform(#selector(handleLogout), with: nil, afterDelay: 0)
         }
         else {
-            /* Set Navbar title as current user name
-            let uid = Auth.auth().currentUser?.uid
-            Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
-                if let dictionary = snapshot.value as? [String: AnyObject] {
-                    self.navigationItem.title = dictionary["name"] as? String
-                }
-            })
-        */
             self.navigationItem.title = "User Locations"
         }
     }
@@ -50,8 +43,9 @@ class UserLocationTableVC: UITableViewController {
                 let location = UserLocation()
                 print(dictionary)
                 location.setValuesForKeys(dictionary)
+                self.userLocationsList.append(location)
+                self.tableView.reloadData()
             }
-//            print(snapshot)
         }, withCancel: nil)
     }
     
@@ -67,18 +61,22 @@ class UserLocationTableVC: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return userLocationsList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellId)
+
         
-        cell.textLabel?.text = "Dummy Text"
+        let currentLocation = userLocationsList[indexPath.row]
+        cell.textLabel?.text = currentLocation.userName
+        let currentUserLocation = currentLocation.location ?? "Unknown"
+        let userLocationCheckInTime = currentLocation.eventTime ?? "Unknown"
+        cell.detailTextLabel?.text = "Current Location: \(String(describing: currentUserLocation)) as of \(userLocationCheckInTime)"
+        
+        
         
         return cell
     }
-    
-    
-
 
 }

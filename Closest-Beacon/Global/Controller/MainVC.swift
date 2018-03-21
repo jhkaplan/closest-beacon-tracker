@@ -15,26 +15,9 @@ import FirebaseDatabase
 class MainVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var locationName: UILabel!
     @IBOutlet weak var loggedInUserEmail: UILabel!
-
     
     
     
-//    //Sign out a user
-//
-//     func signOutUser() {
-//        let firebaseAuth = Auth.auth()
-//        do {
-//            try firebaseAuth.signOut()
-//            print("User Signed Out")
-//            // Set user is logged out variable so next app load goes to login page
-//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//            appDelegate.isUserLoggedIn = false
-//            self.performSegue(withIdentifier: "signOutSegue", sender: nil)
-//        }
-//        catch let signOutError as NSError {
-//            print("Error signing out: %@", signOutError)
-//        }
-//    }
     
     
     // signOutUser
@@ -65,15 +48,15 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         // Hide navigation Bar
         
         self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.hidesBackButton = true
-        self.navigationItem.title = "Current Location"
+        setUserDisplayName()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
         
         
-        guard let userEmail = Auth.auth().currentUser?.email else { return }
-        loggedInUserEmail.text = userEmail
         
         // Start writing to database
         
@@ -96,6 +79,16 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         viewUserLocationTable()
     }
     
+    
+    func setUserDisplayName() {
+        let uid = Auth.auth().currentUser?.uid
+        Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value) { (snapshot) in
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                let userDisplayName2 = dictionary["name"] as! String
+                self.navigationItem.title = userDisplayName2
+            }
+        }
+    }
     
     func viewUserLocationTable() {
         let viewController = UserLocationTableVC()

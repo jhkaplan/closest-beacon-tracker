@@ -33,9 +33,10 @@ class UserLocationTableVC: UITableViewController {
             perform(#selector(handleLogout), with: nil, afterDelay: 0)
         }
         else {
-            self.navigationItem.title = "User Locations"
+            self.navigationItem.title = "Users"
         }
     }
+    
     
     func fetchUserLocations() {
         Database.database().reference().child("Locations").queryOrdered(byChild: "eventTime").observe(.childAdded, with: { (snapshot) in

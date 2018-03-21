@@ -36,57 +36,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HT0-ep-dJh">
-                                <rect key="frame" x="33" y="175" width="309" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HT0-ep-dJh">
+                                <rect key="frame" x="33" y="175" width="309" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUb-kf-6ek">
-                                <rect key="frame" x="299" y="602" width="60" height="30"/>
-                                <state key="normal" title="Sign Out"/>
-                                <connections>
-                                    <action selector="onSignOutTapped:" destination="CkW-Dx-Yhb" eventType="touchUpInside" id="Sh2-Ar-mAf"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="loggedInUserEmail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRB-zO-jH5">
-                                <rect key="frame" x="230" y="579" width="128.5" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znz-QG-HE5">
-                                <rect key="frame" x="107" y="310" width="161" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="View User Location List"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znz-QG-HE5">
+                                <rect key="frame" x="282" y="617" width="77" height="30"/>
+                                <state key="normal" title="View Users"/>
                                 <connections>
                                     <action selector="viewUesrLocationTableOnTapped2:" destination="CkW-Dx-Yhb" eventType="touchUpInside" id="BD1-HL-I5c"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Current Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYW-xq-U7I">
+                                <rect key="frame" x="104" y="132" width="167" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="394-jP-v59" firstAttribute="bottom" secondItem="znz-QG-HE5" secondAttribute="bottom" constant="20" id="0bi-Bj-sma"/>
+                            <constraint firstItem="394-jP-v59" firstAttribute="trailing" secondItem="rYW-xq-U7I" secondAttribute="trailing" constant="104" id="3bb-Kf-wbO"/>
                             <constraint firstItem="394-jP-v59" firstAttribute="trailing" secondItem="HT0-ep-dJh" secondAttribute="trailing" constant="33" id="4ex-bH-1I2"/>
-                            <constraint firstItem="sUb-kf-6ek" firstAttribute="top" secondItem="dRB-zO-jH5" secondAttribute="bottom" constant="5" id="5ur-5r-X3V"/>
                             <constraint firstItem="HT0-ep-dJh" firstAttribute="top" secondItem="394-jP-v59" secondAttribute="top" constant="111" id="AXx-yE-fvR"/>
-                            <constraint firstItem="394-jP-v59" firstAttribute="bottom" secondItem="sUb-kf-6ek" secondAttribute="bottom" constant="35" id="S3U-dA-Ngt"/>
-                            <constraint firstItem="394-jP-v59" firstAttribute="trailing" secondItem="sUb-kf-6ek" secondAttribute="trailing" constant="16" id="SCM-3O-jso"/>
                             <constraint firstItem="HT0-ep-dJh" firstAttribute="leading" secondItem="394-jP-v59" secondAttribute="leading" constant="33" id="Y10-16-Yhr"/>
+                            <constraint firstItem="HT0-ep-dJh" firstAttribute="top" secondItem="rYW-xq-U7I" secondAttribute="bottom" constant="22" id="diq-pv-XHg"/>
                             <constraint firstItem="HT0-ep-dJh" firstAttribute="leading" secondItem="394-jP-v59" secondAttribute="leading" constant="33" id="fNg-YM-Ywo"/>
                             <constraint firstItem="HT0-ep-dJh" firstAttribute="top" secondItem="394-jP-v59" secondAttribute="top" constant="111" id="gCG-rm-YjK"/>
-                            <constraint firstItem="394-jP-v59" firstAttribute="trailing" secondItem="dRB-zO-jH5" secondAttribute="trailing" constant="16" id="sTZ-e6-cxU"/>
+                            <constraint firstItem="rYW-xq-U7I" firstAttribute="leading" secondItem="394-jP-v59" secondAttribute="leading" constant="104" id="m8X-Gc-7br"/>
+                            <constraint firstItem="394-jP-v59" firstAttribute="trailing" secondItem="znz-QG-HE5" secondAttribute="trailing" constant="16" id="pNR-wk-yV0"/>
                             <constraint firstItem="394-jP-v59" firstAttribute="trailing" secondItem="HT0-ep-dJh" secondAttribute="trailing" constant="33" id="wru-gV-8ji"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="394-jP-v59"/>
                     </view>
                     <connections>
                         <outlet property="locationName" destination="HT0-ep-dJh" id="7h3-TN-EFp"/>
-                        <outlet property="loggedInUserEmail" destination="dRB-zO-jH5" id="UQ1-pR-h2H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Alz-OT-oSk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="551" y="-188"/>
+            <point key="canvasLocation" x="549.60000000000002" y="-188.45577211394306"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Qy-Ox-SYh">

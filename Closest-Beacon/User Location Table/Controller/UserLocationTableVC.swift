@@ -38,12 +38,13 @@ class UserLocationTableVC: UITableViewController {
     }
     
     func fetchUserLocations() {
-        Database.database().reference().child("Locations").observe(.childAdded, with: { (snapshot) in
+        Database.database().reference().child("Locations").queryOrdered(byChild: "eventTime").observe(.childAdded, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 let location = UserLocation()
                 print(dictionary)
                 location.setValuesForKeys(dictionary)
-                self.userLocationsList.append(location)
+                //self.userLocationsList.append(location)
+                self.userLocationsList.insert(location, at: 0)
                 self.tableView.reloadData()
             }
         }, withCancel: nil)

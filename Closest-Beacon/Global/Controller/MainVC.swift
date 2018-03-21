@@ -69,6 +69,7 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         
         self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.hidesBackButton = true
+        self.navigationItem.title = "Current Location"
         
         
         guard let userEmail = Auth.auth().currentUser?.email else { return }
@@ -124,11 +125,13 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
         let eventTime = dateFormatter.string(from: Date())
+        let postTime = ServerValue.timestamp()
         
         
         let post :  [String : AnyObject] = ["user" : user as AnyObject,
                                             "location" : currentBeacon as AnyObject,
-                                            "eventTime" : eventTime as AnyObject
+                                            "eventTime" : eventTime as AnyObject,
+                                            "postTime" : postTime as AnyObject
         ]
         
         let databaseREF = Database.database().reference()

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2D5E28AB2DA3FACE0695CD2B /* Pods_Closest_Beacon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA3CAABF9C831313F8D4BAA /* Pods_Closest_Beacon.framework */; };
+		9919029920698A0B00C70CC6 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9919029820698A0B00C70CC6 /* UserListController.swift */; };
+		9919029B206990C600C70CC6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9919029A206990C600C70CC6 /* User.swift */; };
 		992BD40620597034003E8F0C /* UserLocationTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992BD40520597034003E8F0C /* UserLocationTableVC.swift */; };
 		992BD40820597697003E8F0C /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992BD40720597697003E8F0C /* LoginController.swift */; };
 		992BD4102059F656003E8F0C /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992BD40F2059F656003E8F0C /* UserLocation.swift */; };
@@ -52,6 +54,8 @@
 		523B8C153062FF194F085958 /* Pods-Closest-Beacon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Closest-Beacon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Closest-Beacon/Pods-Closest-Beacon.debug.xcconfig"; sourceTree = "<group>"; };
 		61D143097B9BE00E8E61CE6F /* Pods-Closest-Beacon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Closest-Beacon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Closest-Beacon/Pods-Closest-Beacon.release.xcconfig"; sourceTree = "<group>"; };
 		7B2694A0229013716179262A /* Pods_Closest_BeaconTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Closest_BeaconTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9919029820698A0B00C70CC6 /* UserListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListController.swift; sourceTree = "<group>"; };
+		9919029A206990C600C70CC6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		992BD40520597034003E8F0C /* UserLocationTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationTableVC.swift; sourceTree = "<group>"; };
 		992BD40720597697003E8F0C /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		992BD40F2059F656003E8F0C /* UserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
@@ -124,6 +128,48 @@
 				61D143097B9BE00E8E61CE6F /* Pods-Closest-Beacon.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		99190293206988B500C70CC6 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				99190296206988D900C70CC6 /* Model */,
+				99190295206988CF00C70CC6 /* View */,
+				99190294206988C500C70CC6 /* Controller */,
+				991902972069893200C70CC6 /* Service */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		99190294206988C500C70CC6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9919029820698A0B00C70CC6 /* UserListController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		99190295206988CF00C70CC6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		99190296206988D900C70CC6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9919029A206990C600C70CC6 /* User.swift */,
+			);
+			name = Model;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		991902972069893200C70CC6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		992BD3FD205969AD003E8F0C /* View */ = {
@@ -278,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				99B7E3072058812B00A69487 /* Global */,
+				99190293206988B500C70CC6 /* Users */,
 				99B7E3002058809100A69487 /* User Location Table */,
 				99B7E310205882E500A69487 /* Login */,
 				99DB12CE203DC9580015872B /* Info.plist */,
@@ -524,7 +571,9 @@
 				99E08DA5204F78A70004588F /* AlertController.swift in Sources */,
 				992BD40620597034003E8F0C /* UserLocationTableVC.swift in Sources */,
 				992BD4102059F656003E8F0C /* UserLocation.swift in Sources */,
+				9919029B206990C600C70CC6 /* User.swift in Sources */,
 				99B7E30F2058828000A69487 /* _UserLocationVC.swift in Sources */,
+				9919029920698A0B00C70CC6 /* UserListController.swift in Sources */,
 				99B7E3162058A0EA00A69487 /* FirDatabaseService.swift in Sources */,
 				99E2184C204F6F810060959C /* _SignUpVC.swift in Sources */,
 				99B7E3142058995400A69487 /* LocationData.swift in Sources */,

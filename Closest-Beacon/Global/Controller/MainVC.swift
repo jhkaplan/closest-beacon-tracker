@@ -78,6 +78,11 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
     @IBAction func viewUesrLocationTableOnTapped2(_ sender: Any) {
         viewUserLocationTable()
     }
+    @IBAction func viewUserListOnTapped(_ sender: Any) {
+        viewUserList()
+    }
+    
+    
     
     
     func setUserDisplayName() {
@@ -94,6 +99,13 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         let viewController = UserLocationTableVC()
         show(viewController, sender: self)
         // present(viewController, animated: true, completion: nil)
+    }
+    
+    func viewUserList() {
+        let userViewController = UserListController()
+        // show(viewController, sender: self)
+        let navController = UINavigationController(rootViewController: userViewController)
+        show(navController, sender: self)
     }
     
     

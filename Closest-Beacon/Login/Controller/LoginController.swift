@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LoginController: UIViewController {
+class LoginController: UIViewController, UITextFieldDelegate {
     
     let inputsContainerView: UIView = {
         let view = UIView()
@@ -50,8 +50,6 @@ class LoginController: UIViewController {
                 print(error ?? "Error!")
                 return
             }
-            
-            //self.dismiss(animated: true, completion: nil)
             self.performSegue(withIdentifier: "PresentMAINVC", sender: nil)
         }
     }
@@ -78,7 +76,8 @@ class LoginController: UIViewController {
                     print(err ?? "error")
                     return
                 }
-                self.dismiss(animated: true, completion: nil)
+                self.performSegue(withIdentifier: "PresentMAINVC", sender: nil)
+//                self.dismiss(animated: true, completion: nil)
             })
             // ref.updateChildValues(values)
             
@@ -114,11 +113,14 @@ class LoginController: UIViewController {
         return view
     }()
     
-    let passwordTextField: UITextField = {
+    lazy var passwordTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Password"
         tf.isSecureTextEntry = true
         tf.translatesAutoresizingMaskIntoConstraints = false
+        
+        // Hit return to login
+        tf.delegate = self
         return tf
     }()
     
@@ -264,6 +266,17 @@ class LoginController: UIViewController {
         loginRegisterButton.topAnchor.constraint(equalTo: inputsContainerView.bottomAnchor, constant: 12).isActive = true
         loginRegisterButton.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
         loginRegisterButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if loginRegisterButton.titleLabel?.text == "Login" {
+            print("Handle Login")
+            handleLogin()
+        }
+        if loginRegisterButton.titleLabel?.text == "Register" {
+            handleRegister()
+        }
+        return true
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

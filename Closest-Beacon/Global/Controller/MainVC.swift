@@ -53,7 +53,7 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         
         self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.hidesBackButton = true
-        setUserDisplayName()
+        self.navigationItem.title = "Your Location"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
         
         
@@ -98,14 +98,11 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
     func viewUserLocationTable() {
         let viewController = UserLocationTableVC()
         show(viewController, sender: self)
-        // present(viewController, animated: true, completion: nil)
     }
     
     func viewUserList() {
         let userViewController = UserListController()
-        // show(viewController, sender: self)
-        let navController = UINavigationController(rootViewController: userViewController)
-        show(navController, sender: self)
+        show(userViewController, sender: self)
     }
     
     

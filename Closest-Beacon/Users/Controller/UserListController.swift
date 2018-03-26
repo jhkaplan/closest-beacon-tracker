@@ -19,10 +19,11 @@ class UserListController: UITableViewController {
         super.viewDidLoad()
         
         self.navigationItem.title = "Users"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleBack))
         
         tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
         fetchUser()
+        
+        tableView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showUserLocation)))
     }
     
     
@@ -41,11 +42,7 @@ class UserListController: UITableViewController {
             
         }, withCancel: nil)
     }
-    
-    @objc func handleBack() {
-        dismiss(animated: true, completion: nil)
-    }
-    
+        
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userList.count
     }
@@ -58,6 +55,12 @@ class UserListController: UITableViewController {
         cell.detailTextLabel?.text = user.email
         
         return cell
+    }
+    
+    @objc func showUserLocation() {
+        let userLocationController = UserLocationTableVC()
+        show(userLocationController, sender: self)
+        print("User Location")
     }
 }
 

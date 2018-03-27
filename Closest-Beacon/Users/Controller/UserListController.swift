@@ -57,7 +57,10 @@ class UserListController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let user = self.userList[indexPath.row]        
+        let user = self.userList[indexPath.row]
+        let userLocationTableVC = UserLocationTableVC()
+        userLocationTableVC.selectedUser = user.name
+        navigationController?.pushViewController(userLocationTableVC, animated: true)
         print("Selected User:", user.name)
     }
     

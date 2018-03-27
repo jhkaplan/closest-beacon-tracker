@@ -14,6 +14,7 @@ class UserLocationTableVC: UITableViewController {
     
     let cellId = "cellId"
     var userLocationsList = [UserLocation]()
+    var selectedUser: String!
     
 
     override func viewDidLoad() {
@@ -25,6 +26,8 @@ class UserLocationTableVC: UITableViewController {
         
         checkIfUserIsLoggedIn()
         fetchUserLocations()
+        
+        print(selectedUser)
     }
     
     // Check if user is logged in
@@ -33,7 +36,7 @@ class UserLocationTableVC: UITableViewController {
             perform(#selector(handleLogout), with: nil, afterDelay: 0)
         }
         else {
-//            self.navigationItem.title = "User Location"
+            self.navigationItem.title = selectedUser
         }
     }
     

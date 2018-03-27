@@ -14,7 +14,8 @@ class UserLocationTableVC: UITableViewController {
     
     let cellId = "cellId"
     var userLocationsList = [UserLocation]()
-    var selectedUser: String!
+    var selectedUserName: String = ""
+    var selectedUserEmail: String = ""
     
 
     override func viewDidLoad() {
@@ -27,7 +28,7 @@ class UserLocationTableVC: UITableViewController {
         checkIfUserIsLoggedIn()
         fetchUserLocations()
         
-        print(selectedUser)
+        print(selectedUserName, selectedUserEmail)
     }
     
     // Check if user is logged in
@@ -36,13 +37,13 @@ class UserLocationTableVC: UITableViewController {
             perform(#selector(handleLogout), with: nil, afterDelay: 0)
         }
         else {
-            self.navigationItem.title = selectedUser
+            self.navigationItem.title = selectedUserName
         }
     }
     
     
     func fetchUserLocations() {
-        Database.database().reference().child("Locations").queryOrdered(byChild: "eventTime").observe(.childAdded, with: { (snapshot) in
+        Database.database().reference().child("Locations").queryOrdered(byChild: "user").queryEqual(toValue: selectedUserEmail.lowercased()).observe(.childAdded, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 let location = UserLocation()
                 location.setValuesForKeys(dictionary)

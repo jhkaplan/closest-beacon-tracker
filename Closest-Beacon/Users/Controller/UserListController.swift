@@ -23,7 +23,7 @@ class UserListController: UITableViewController {
         tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
         fetchUser()
         
-        tableView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showUserLocation)))
+//        tableView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showUserLocation)))
     }
     
     
@@ -34,7 +34,6 @@ class UserListController: UITableViewController {
                 let user = User()
                 user.name = dictionary["name"] as! String
                 user.email = dictionary["email"] as! String
-                print(user.name, user.email)
                 self.userList.append(user)
                 self.tableView.reloadData()
                 
@@ -57,11 +56,11 @@ class UserListController: UITableViewController {
         return cell
     }
     
-    @objc func showUserLocation() {
-        let userLocationController = UserLocationTableVC()
-        show(userLocationController, sender: self)
-        print("User Location")
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = self.userList[indexPath.row]        
+        print("Selected User:", user.name)
     }
+    
 }
 
 class UserCell: UITableViewCell {

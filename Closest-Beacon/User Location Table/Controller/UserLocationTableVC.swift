@@ -14,6 +14,7 @@ class UserLocationTableVC: UITableViewController {
     
     let cellId = "cellId"
     var userLocationsList = [UserLocation]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,6 @@ class UserLocationTableVC: UITableViewController {
 
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
-        
         
         checkIfUserIsLoggedIn()
         fetchUserLocations()
@@ -33,7 +33,7 @@ class UserLocationTableVC: UITableViewController {
             perform(#selector(handleLogout), with: nil, afterDelay: 0)
         }
         else {
-            self.navigationItem.title = "Users"
+//            self.navigationItem.title = "User Location"
         }
     }
     
@@ -42,9 +42,7 @@ class UserLocationTableVC: UITableViewController {
         Database.database().reference().child("Locations").queryOrdered(byChild: "eventTime").observe(.childAdded, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 let location = UserLocation()
-                print(dictionary)
                 location.setValuesForKeys(dictionary)
-                //self.userLocationsList.append(location)
                 self.userLocationsList.insert(location, at: 0)
                 self.tableView.reloadData()
             }
@@ -64,6 +62,7 @@ class UserLocationTableVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userLocationsList.count
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

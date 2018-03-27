@@ -117,9 +117,11 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         present(loginController,animated: true, completion: nil)
     }
     
-    // define post to Firebase function
+    
     
     func post(){
+        
+        // define post to Firebase function
         
         guard let beaconID = self.currentBeaconID else { return }
         guard let user: String = Auth.auth().currentUser?.email else { return }
@@ -139,6 +141,67 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         let databaseREF = Database.database().reference()
         
         databaseREF.child("Locations").childByAutoId().setValue(post)
+        
+        
+        // API POST Call
+        
+        guard let postURL = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
+        var request = URLRequest(url: postURL)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: post, options: []) else { return }
+        request.httpBody = httpBody
+        
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, response, error) in
+            if let response = response {
+                print(response)
+            }
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    print(json)
+                } catch {
+                    print(error)
+                }
+            }
+            }.resume()
+        
+    }
+    
+    
+    
+    
+    @IBAction func postOnTapped(_ sender: Any) {
+        postToApi()
+    }
+    
+    func postToApi() {
+        // Set URL Parameters - pull from fields later
+        
+        let parameters = ["username": "@joshkaplan", "message": "Hello World"]
+        
+        guard let postURL = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
+        var request = URLRequest(url: postURL)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
+        request.httpBody = httpBody
+        
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, response, error) in
+            if let response = response {
+                print(response)
+            }
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    print(json)
+                } catch {
+                    print(error)
+                }
+            }
+        }.resume()
         
     }
     

@@ -37,6 +37,20 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         9463: UIColor(red: 110/255, green: 206/255, blue: 245/255, alpha: 1),
         37987: UIColor(red: 110/255, green: 206/255, blue: 245/255, alpha: 1),
         ]
+    
+    let hueColorXY = [
+        // created from here: http://colormine.org/convert/rgb-to-yxy
+        38865: String("0.18530457146662035,0.12130093315893441"),
+        37987: String("0.2324933873564069,0.27935596849188454"),
+        14477: String("0.2997147582023723,0.370383158784688")
+    ]
+    
+    let hueAlert = [
+        38865: String("none"),
+        14477: String("lselect"),
+        37987: String("none")
+    ]
+    
 
     let beaconLocation = [
         38865: "Taylor's Office",
@@ -151,59 +165,61 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         guard let httpBody = try? JSONSerialization.data(withJSONObject: post, options: []) else { return }
         request.httpBody = httpBody
-        
+
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
-            if let response = response {
-                print(response)
+            if response != nil {
+//                print(response)
             }
             if let data = data {
                 do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    print(json)
+                    _ = try JSONSerialization.jsonObject(with: data, options: [])
+//                    print(json)
                 } catch {
-                    print(error)
+//                    print(error)
                 }
             }
             }.resume()
         
-    }
-    
-    
-    
-    
-    @IBAction func postOnTapped(_ sender: Any) {
-        postToApi()
-    }
-    
-    func postToApi() {
-        // Set URL Parameters - pull from fields later
         
-        let parameters = ["username": "@joshkaplan", "message": "Hello World"]
         
-        guard let postURL = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
-        var request = URLRequest(url: postURL)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
-        request.httpBody = httpBody
+        // Put call to Hue API
+        let hueState : String = "true"
+        let huePostXY : String = hueColorXY[beaconID]!
+        let hueShowAlert : String = hueAlert[beaconID]!
+        let huePostBody = String(format: "\"on\":%@, \"xy\": [%@], \"alert\": \"%@\"", hueState, huePostXY, hueShowAlert)
+        // "on":true, "xy": [0.2324933873564069,0.27935596849188454]
+        let huePostBodyWrapped = String(format: "{%@}", huePostBody)
         
-        let session = URLSession.shared
-        session.dataTask(with: request) { (data, response, error) in
-            if let response = response {
-                print(response)
+        let headers = [
+            "Cache-Control": "no-cache",
+            "Postman-Token": "9021550f-767f-4a68-cd6c-32782e4561f9"
+        ]
+        
+        let postData = NSData(data: huePostBodyWrapped.data(using: String.Encoding.utf8)!)
+        
+        let hueRequest = NSMutableURLRequest(url: NSURL(string: "http://192.168.1.11/api/-icvPrqsUu7q-hknOjUmwwbz59i1SwSlZEfKXyjh/lights/4/state")! as URL,
+                                          cachePolicy: .useProtocolCachePolicy,
+                                          timeoutInterval: 10.0)
+        hueRequest.httpMethod = "PUT"
+        hueRequest.allHTTPHeaderFields = headers
+        hueRequest.httpBody = postData as Data
+        
+        let hueSession = URLSession.shared
+        let dataTask = hueSession.dataTask(with: hueRequest as URLRequest, completionHandler: { (data, response, error) -> Void in
+            if (error != nil) {
+                print(error ?? "error")
+            } else {
+                let httpResponse = response as? HTTPURLResponse
+                print(httpResponse ?? "")
             }
-            if let data = data {
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    print(json)
-                } catch {
-                    print(error)
-                }
-            }
-        }.resume()
+        })
         
+        dataTask.resume()
+        print("Alert:" + hueShowAlert)
+        print(huePostBody)
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

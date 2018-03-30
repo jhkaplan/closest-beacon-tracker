@@ -53,10 +53,12 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
     
 
     let beaconLocation = [
-        38865: "Taylor's Office",
-        14477: "Benoit's Office",
-//        9463: "Josh's Office",
-        37987: "Josh's Office"
+        38865: "Waste Accumulation",
+//        38865: "Taylor's Office",
+        14477: "Staging Area",
+//        14477: "Benoit's Office",
+        37987: "Offsite"
+//        37987: "Josh's Office"
     ]
     
     override func viewDidLoad() {
@@ -157,85 +159,9 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         databaseREF.child("Locations").childByAutoId().setValue(post)
         
         
-        // Blockchain API
-        
-        let headers = [
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Cache-Control": "no-cache",
-            "Postman-Token": "26a0ecef-12e2-1e8b-c0a7-398da5b84130"
-        ]
-        
-        
-        
-        let postData = NSMutableData(data: "text=Location: \(currentBeacon!)".data(using: String.Encoding.utf8)!)
-        postData.append("&user_name=User: \(user) ".data(using: String.Encoding.utf8)!)
-//        postData.append("Minor=Minor: \(currentBeaconID!)".data(using: String.Encoding.utf8)!)
-        
-        let request = NSMutableURLRequest(url: NSURL(string: "https://blockchain.appsfight.com/v1.0/the-positive-company/mine-block/")! as URL,
-                                          cachePolicy: .useProtocolCachePolicy,
-                                          timeoutInterval: 10.0)
-        
-        
-        request.httpMethod = "POST"
-        request.allHTTPHeaderFields = headers
-        request.httpBody = postData as Data
-        
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-            if (error != nil) {
-                print(error!)
-            } else {
-                let httpResponse = response as? HTTPURLResponse
-                print(httpResponse!)
-            }
-        })
-        print(postData)
-        
-        dataTask.resume()
+        // Post Event to Blockchain API
+        BlockchainAPI.blockchainAPI(user, currentBeacon: currentBeacon!)
     }
-        
-        
-        
-        
-        
-        
-        ////////////////////                        Put call to Hue API    //////////////////////
-        
-//        let hueState : String = "true"
-//        let huePostXY : String = hueColorXY[beaconID]!
-//        let hueShowAlert : String = hueAlert[beaconID]!
-//        let huePostBody = String(format: "\"on\":%@, \"xy\": [%@], \"alert\": \"%@\"", hueState, huePostXY, hueShowAlert)
-//        // "on":true, "xy": [0.2324933873564069,0.27935596849188454]
-//        let huePostBodyWrapped = String(format: "{%@}", huePostBody)
-//        
-//        let hueHeaders = [
-//            "Cache-Control": "no-cache",
-//            "Postman-Token": "9021550f-767f-4a68-cd6c-32782e4561f9"
-//        ]
-//        
-//        let huePostData = NSData(data: huePostBodyWrapped.data(using: String.Encoding.utf8)!)
-//        
-//        let hueRequest = NSMutableURLRequest(url: NSURL(string: "http://192.168.1.11/api/-icvPrqsUu7q-hknOjUmwwbz59i1SwSlZEfKXyjh/lights/4/state")! as URL,
-//                                          cachePolicy: .useProtocolCachePolicy,
-//                                          timeoutInterval: 10.0)
-//        hueRequest.httpMethod = "PUT"
-//        hueRequest.allHTTPHeaderFields = hueHeaders
-//        hueRequest.httpBody = huePostData as Data
-//        
-//        let hueSession = URLSession.shared
-//        let hueDataTask = hueSession.dataTask(with: hueRequest as URLRequest, completionHandler: { (data, response, error) -> Void in
-//            if (error != nil) {
-//                print(error ?? "error")
-//            } else {
-//                let httpResponse = response as? HTTPURLResponse
-//                print(httpResponse ?? "")
-//            }
-//        })
-//        
-//        hueDataTask.resume()
-//        print("Alert:" + hueShowAlert)
-//        print(huePostBody)
-//    }
     
     
     override func didReceiveMemoryWarning() {

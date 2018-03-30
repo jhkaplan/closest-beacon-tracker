@@ -14,6 +14,8 @@
 		992BD40620597034003E8F0C /* UserLocationTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992BD40520597034003E8F0C /* UserLocationTableVC.swift */; };
 		992BD40820597697003E8F0C /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992BD40720597697003E8F0C /* LoginController.swift */; };
 		992BD4102059F656003E8F0C /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992BD40F2059F656003E8F0C /* UserLocation.swift */; };
+		99582521206E81B400797329 /* Blockchain_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99582520206E81B400797329 /* Blockchain_API.swift */; };
+		99582523206E83DF00797329 /* Hue_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99582522206E83DF00797329 /* Hue_API.swift */; };
 		9982F320203EFB5F0099CD2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9982F31F203EFB5F0099CD2D /* GoogleService-Info.plist */; };
 		99B7E305205880E800A69487 /* UserLocationTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B7E304205880E800A69487 /* UserLocationTable.storyboard */; };
 		99B7E30F2058828000A69487 /* _UserLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B7E30E2058828000A69487 /* _UserLocationVC.swift */; };
@@ -63,6 +65,8 @@
 		992BD40520597034003E8F0C /* UserLocationTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationTableVC.swift; sourceTree = "<group>"; };
 		992BD40720597697003E8F0C /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		992BD40F2059F656003E8F0C /* UserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
+		99582520206E81B400797329 /* Blockchain_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blockchain_API.swift; sourceTree = "<group>"; };
+		99582522206E83DF00797329 /* Hue_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hue_API.swift; sourceTree = "<group>"; };
 		9982F31F203EFB5F0099CD2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		99B7E304205880E800A69487 /* UserLocationTable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserLocationTable.storyboard; sourceTree = "<group>"; };
 		99B7E30E2058828000A69487 /* _UserLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UserLocationVC.swift; sourceTree = "<group>"; };
@@ -259,6 +263,8 @@
 		99B7E3082058817800A69487 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				99582520206E81B400797329 /* Blockchain_API.swift */,
+				99582522206E83DF00797329 /* Hue_API.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -579,7 +585,9 @@
 				992BD40820597697003E8F0C /* LoginController.swift in Sources */,
 				99B7E3122058899600A69487 /* UserListCell.swift in Sources */,
 				99DB12C5203DC9580015872B /* MainVC.swift in Sources */,
+				99582521206E81B400797329 /* Blockchain_API.swift in Sources */,
 				99E08DA5204F78A70004588F /* AlertController.swift in Sources */,
+				99582523206E83DF00797329 /* Hue_API.swift in Sources */,
 				992BD40620597034003E8F0C /* UserLocationTableVC.swift in Sources */,
 				992BD4102059F656003E8F0C /* UserLocation.swift in Sources */,
 				9919029B206990C600C70CC6 /* User.swift in Sources */,

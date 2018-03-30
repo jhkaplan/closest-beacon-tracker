@@ -16,6 +16,14 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var locationName: UILabel!
     @IBOutlet weak var loggedInUserEmail: UILabel!
     
+    @IBOutlet weak var barrelIDTF: UITextField!
+    
+    
+    var barrelID: String? = ""
+    @IBAction func barrelIDButtonOnPressed(_ sender: Any) {
+        self.barrelID = barrelIDTF.text
+        post()
+    }
     
     
     
@@ -76,7 +84,7 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         
         // Start writing to database
         
-        post()
+//        post()
         
         locationManager.delegate = self
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedAlways) {
@@ -146,12 +154,14 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
         let eventTime = dateFormatter.string(from: Date())
         let postTime = ServerValue.timestamp()
+        let fbBarrelID = barrelID
         
         
         let post :  [String : AnyObject] = ["user" : user as AnyObject,
                                             "location" : currentBeacon as AnyObject,
                                             "eventTime" : eventTime as AnyObject,
-                                            "postTime" : postTime as AnyObject
+                                            "postTime" : postTime as AnyObject,
+                                            "barrelID" : fbBarrelID as AnyObject
         ]
         
         let databaseREF = Database.database().reference()

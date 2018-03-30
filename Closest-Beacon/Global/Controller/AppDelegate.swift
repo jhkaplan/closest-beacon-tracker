@@ -12,9 +12,11 @@ import Firebase
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate {
   
     var window: UIWindow?
+    
+    let beaconManager = ESTBeaconManager()
     
     //publically accessible boolean value
     //used to determine what viewController to present when the app loads
@@ -41,6 +43,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        self.beaconManager.delegate = self
+        self.beaconManager.requestAlwaysAuthorization()
+        self.beaconManager.startMonitoring(for: CLBeaconRegion(
+            proximityUUID: UUID(uuidString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!,
+            major: 24726, minor: 38865, identifier: "monitored region"))
+        
+        UIApplication.shared.registerUserNotificationSettings(
+            UIUserNotificationSettings(types: .alert, categories: nil))
         
        /* window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
@@ -104,6 +114,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func beaconManager(_ manager: Any, didEnter region: CLBeaconRegion) {
     }
 
 

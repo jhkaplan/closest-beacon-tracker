@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D5E28AB2DA3FACE0695CD2B /* Pods_Closest_Beacon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA3CAABF9C831313F8D4BAA /* Pods_Closest_Beacon.framework */; };
+		99043EF8206C2668005821CF /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99043EF7206C2668005821CF /* EstimoteSDK.framework */; };
 		9919029920698A0B00C70CC6 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9919029820698A0B00C70CC6 /* UserListController.swift */; };
 		9919029B206990C600C70CC6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9919029A206990C600C70CC6 /* User.swift */; };
 		992BD40620597034003E8F0C /* UserLocationTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992BD40520597034003E8F0C /* UserLocationTableVC.swift */; };
@@ -54,6 +55,8 @@
 		523B8C153062FF194F085958 /* Pods-Closest-Beacon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Closest-Beacon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Closest-Beacon/Pods-Closest-Beacon.debug.xcconfig"; sourceTree = "<group>"; };
 		61D143097B9BE00E8E61CE6F /* Pods-Closest-Beacon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Closest-Beacon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Closest-Beacon/Pods-Closest-Beacon.release.xcconfig"; sourceTree = "<group>"; };
 		7B2694A0229013716179262A /* Pods_Closest_BeaconTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Closest_BeaconTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99043EF6206C2592005821CF /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
+		99043EF7206C2668005821CF /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
 		991778E3206C19280044DCEA /* Closest-Beacon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Closest-Beacon.entitlements"; sourceTree = "<group>"; };
 		9919029820698A0B00C70CC6 /* UserListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListController.swift; sourceTree = "<group>"; };
 		9919029A206990C600C70CC6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -92,6 +95,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D5E28AB2DA3FACE0695CD2B /* Pods_Closest_Beacon.framework in Frameworks */,
+				99043EF8206C2668005821CF /* EstimoteSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +306,7 @@
 		99DB12B6203DC9580015872B = {
 			isa = PBXGroup;
 			children = (
+				99043EF7206C2668005821CF /* EstimoteSDK.framework */,
 				99DB12C1203DC9580015872B /* Closest-Beacon */,
 				99DB12D6203DC9580015872B /* Closest-BeaconTests */,
 				99DB12E1203DC9580015872B /* Closest-BeaconUITests */,
@@ -324,6 +329,7 @@
 		99DB12C1203DC9580015872B /* Closest-Beacon */ = {
 			isa = PBXGroup;
 			children = (
+				99043EF6206C2592005821CF /* ObjCBridge.h */,
 				991778E3206C19280044DCEA /* Closest-Beacon.entitlements */,
 				99B7E3072058812B00A69487 /* Global */,
 				99190293206988B500C70CC6 /* Users */,
@@ -691,6 +697,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 			};
@@ -741,6 +748,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				VALIDATE_PRODUCT = YES;
@@ -754,6 +762,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 593AN5E92R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Closest-Beacon/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "enablonlabs.Closest-Beacon";
@@ -771,6 +783,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 593AN5E92R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Closest-Beacon/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "enablonlabs.Closest-Beacon";

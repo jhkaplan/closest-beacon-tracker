@@ -84,6 +84,14 @@
                                     <action selector="barrelIDButtonOnPressed:" destination="CkW-Dx-Yhb" eventType="touchUpInside" id="Wlt-NG-LNX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOo-2b-Ody">
+                                <rect key="frame" x="251" y="539" width="111" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Barrel Locations"/>
+                                <connections>
+                                    <action selector="viewBarrelLocationsOnTapped:" destination="CkW-Dx-Yhb" eventType="touchUpInside" id="ow2-4X-7EK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

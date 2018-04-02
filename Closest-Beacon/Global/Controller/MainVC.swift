@@ -106,6 +106,17 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         viewUserList()
     }
     
+    // New to view Barrel Locations TEMPORARY
+    @IBAction func viewBarrelLocationsOnTapped(_ sender: Any) {
+        viewBarrelLocations()
+    }
+    
+    func viewBarrelLocations() {
+        let viewController = BarrelLocationListController()
+        show(viewController,sender: self)
+    }
+    
+    
     
     
     

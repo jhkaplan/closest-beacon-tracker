@@ -16,6 +16,8 @@
 		992BD4102059F656003E8F0C /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992BD40F2059F656003E8F0C /* UserLocation.swift */; };
 		99582521206E81B400797329 /* Blockchain_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99582520206E81B400797329 /* Blockchain_API.swift */; };
 		99582523206E83DF00797329 /* Hue_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99582522206E83DF00797329 /* Hue_API.swift */; };
+		9969067520729A2D00EC8303 /* BarrelLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969067420729A2D00EC8303 /* BarrelLocation.swift */; };
+		9969067720729AA500EC8303 /* BarrelLocationListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969067620729AA500EC8303 /* BarrelLocationListController.swift */; };
 		9982F320203EFB5F0099CD2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9982F31F203EFB5F0099CD2D /* GoogleService-Info.plist */; };
 		99B7E305205880E800A69487 /* UserLocationTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B7E304205880E800A69487 /* UserLocationTable.storyboard */; };
 		99B7E30F2058828000A69487 /* _UserLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B7E30E2058828000A69487 /* _UserLocationVC.swift */; };
@@ -67,6 +69,8 @@
 		992BD40F2059F656003E8F0C /* UserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
 		99582520206E81B400797329 /* Blockchain_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blockchain_API.swift; sourceTree = "<group>"; };
 		99582522206E83DF00797329 /* Hue_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hue_API.swift; sourceTree = "<group>"; };
+		9969067420729A2D00EC8303 /* BarrelLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarrelLocation.swift; sourceTree = "<group>"; };
+		9969067620729AA500EC8303 /* BarrelLocationListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarrelLocationListController.swift; sourceTree = "<group>"; };
 		9982F31F203EFB5F0099CD2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		99B7E304205880E800A69487 /* UserLocationTable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserLocationTable.storyboard; sourceTree = "<group>"; };
 		99B7E30E2058828000A69487 /* _UserLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UserLocationVC.swift; sourceTree = "<group>"; };
@@ -201,6 +205,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9969067320729A1100EC8303 /* Barrels */ = {
+			isa = PBXGroup;
+			children = (
+				9969067420729A2D00EC8303 /* BarrelLocation.swift */,
+				9969067620729AA500EC8303 /* BarrelLocationListController.swift */,
+			);
+			path = Barrels;
 			sourceTree = "<group>";
 		};
 		99B7E3002058809100A69487 /* User Location Table */ = {
@@ -338,6 +351,7 @@
 				99043EF6206C2592005821CF /* ObjCBridge.h */,
 				991778E3206C19280044DCEA /* Closest-Beacon.entitlements */,
 				99B7E3072058812B00A69487 /* Global */,
+				9969067320729A1100EC8303 /* Barrels */,
 				99190293206988B500C70CC6 /* Users */,
 				99B7E3002058809100A69487 /* User Location Table */,
 				99B7E310205882E500A69487 /* Login */,
@@ -587,12 +601,14 @@
 				99DB12C5203DC9580015872B /* MainVC.swift in Sources */,
 				99582521206E81B400797329 /* Blockchain_API.swift in Sources */,
 				99E08DA5204F78A70004588F /* AlertController.swift in Sources */,
+				9969067520729A2D00EC8303 /* BarrelLocation.swift in Sources */,
 				99582523206E83DF00797329 /* Hue_API.swift in Sources */,
 				992BD40620597034003E8F0C /* UserLocationTableVC.swift in Sources */,
 				992BD4102059F656003E8F0C /* UserLocation.swift in Sources */,
 				9919029B206990C600C70CC6 /* User.swift in Sources */,
 				99B7E30F2058828000A69487 /* _UserLocationVC.swift in Sources */,
 				9919029920698A0B00C70CC6 /* UserListController.swift in Sources */,
+				9969067720729AA500EC8303 /* BarrelLocationListController.swift in Sources */,
 				99B7E3162058A0EA00A69487 /* FirDatabaseService.swift in Sources */,
 				99E2184C204F6F810060959C /* _SignUpVC.swift in Sources */,
 				99B7E3142058995400A69487 /* LocationData.swift in Sources */,

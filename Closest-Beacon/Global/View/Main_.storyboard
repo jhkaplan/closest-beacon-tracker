@@ -112,7 +112,7 @@
                         <viewLayoutGuide key="safeArea" id="394-jP-v59"/>
                     </view>
                     <connections>
-                        <outlet property="barrelID" destination="XMg-LA-4aI" id="Rbs-Dz-2VW"/>
+                        <outlet property="barrelIDTF" destination="XMg-LA-4aI" id="Qhw-Zz-Aai"/>
                         <outlet property="locationName" destination="HT0-ep-dJh" id="7h3-TN-EFp"/>
                     </connections>
                 </viewController>

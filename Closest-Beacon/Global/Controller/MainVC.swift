@@ -19,6 +19,7 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var barrelIDTF: UITextField!
     
     
+    
     var barrelID: String? = ""
     @IBAction func barrelIDButtonOnPressed(_ sender: Any) {
         self.barrelID = barrelIDTF.text

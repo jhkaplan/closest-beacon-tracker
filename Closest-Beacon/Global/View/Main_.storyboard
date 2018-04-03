@@ -79,6 +79,11 @@
                                 <state key="normal" title="Set Location">
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="barrelIDButtonOnPressed:" destination="CkW-Dx-Yhb" eventType="touchUpInside" id="Wlt-NG-LNX"/>
                                 </connections>

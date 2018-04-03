@@ -194,9 +194,9 @@ class LoginController: UIViewController, UITextFieldDelegate {
     
     func setupProfileImageView() {
         profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        profileImageView.bottomAnchor.constraint(equalTo: loginRegisterSegmentedControl.topAnchor, constant: -50).isActive = true
+        // profileImageView.bottomAnchor.constraint(equalTo: loginRegisterSegmentedControl.topAnchor, constant: -50).isActive = true
         // Sets logo from top of screen rather than on top of input box:
-        // profileImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
+        profileImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 140).isActive = true
         profileImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         profileImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
@@ -211,7 +211,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
         // Creating login/register inputs container and sizing
         // Outside inputs box
         inputsContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        inputsContainerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        //Sets input boxes from top
+        inputsContainerView.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 100).isActive = true
         inputsContainerView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
             inputsContainerViewHeightAnchor = inputsContainerView.heightAnchor.constraint(equalToConstant: 150)
         inputsContainerViewHeightAnchor?.isActive = true

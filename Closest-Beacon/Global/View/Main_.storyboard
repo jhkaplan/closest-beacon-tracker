@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,12 +37,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HT0-ep-dJh">
-                                <rect key="frame" x="33" y="175" width="309" height="27.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znz-QG-HE5">
                                 <rect key="frame" x="234" y="617" width="125" height="30"/>
                                 <state key="normal" title="View All Locations"/>
@@ -49,10 +44,10 @@
                                     <action selector="viewUesrLocationTableOnTapped2:" destination="CkW-Dx-Yhb" eventType="touchUpInside" id="BD1-HL-I5c"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Current Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYW-xq-U7I">
-                                <rect key="frame" x="104" y="132" width="167" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYW-xq-U7I">
+                                <rect key="frame" x="123" y="132" width="128" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJP-dc-zks">
@@ -62,24 +57,28 @@
                                     <action selector="viewUserListOnTapped:" destination="CkW-Dx-Yhb" eventType="touchUpInside" id="t9D-Ro-WD2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Barrel ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmP-pI-3Iu">
-                                <rect key="frame" x="16" y="378" width="266" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Barrel ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmP-pI-3Iu">
+                                <rect key="frame" x="54" y="223" width="266" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMg-LA-4aI">
-                                <rect key="frame" x="16" y="407" width="334" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMg-LA-4aI">
+                                <rect key="frame" x="49" y="258" width="276" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qj3-Ik-0ru">
-                                <rect key="frame" x="223" y="455" width="127" height="30"/>
+                                <rect key="frame" x="93" y="338" width="188" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Set Location"/>
+                                <color key="backgroundColor" name="Dark Blue"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Set Location">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                </state>
                                 <connections>
                                     <action selector="barrelIDButtonOnPressed:" destination="CkW-Dx-Yhb" eventType="touchUpInside" id="Wlt-NG-LNX"/>
                                 </connections>
@@ -92,22 +91,28 @@
                                     <action selector="viewBarrelLocationsOnTapped:" destination="CkW-Dx-Yhb" eventType="touchUpInside" id="ow2-4X-7EK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZG-2e-2b2">
+                                <rect key="frame" x="294" y="261" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Camera Icon"/>
+                                <connections>
+                                    <action selector="launchQRScanner:" destination="CkW-Dx-Yhb" eventType="touchUpInside" id="i4c-Ve-CGx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HT0-ep-dJh">
+                                <rect key="frame" x="68" y="161" width="238" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="394-jP-v59" firstAttribute="bottom" secondItem="znz-QG-HE5" secondAttribute="bottom" constant="20" id="0bi-Bj-sma"/>
-                            <constraint firstItem="394-jP-v59" firstAttribute="trailing" secondItem="rYW-xq-U7I" secondAttribute="trailing" constant="104" id="3bb-Kf-wbO"/>
-                            <constraint firstItem="394-jP-v59" firstAttribute="trailing" secondItem="HT0-ep-dJh" secondAttribute="trailing" constant="33" id="4ex-bH-1I2"/>
-                            <constraint firstItem="HT0-ep-dJh" firstAttribute="top" secondItem="394-jP-v59" secondAttribute="top" constant="111" id="AXx-yE-fvR"/>
                             <constraint firstItem="znz-QG-HE5" firstAttribute="top" secondItem="PJP-dc-zks" secondAttribute="bottom" constant="10" id="KYc-sr-Xca"/>
-                            <constraint firstItem="HT0-ep-dJh" firstAttribute="leading" secondItem="394-jP-v59" secondAttribute="leading" constant="33" id="Y10-16-Yhr"/>
                             <constraint firstItem="394-jP-v59" firstAttribute="trailing" secondItem="PJP-dc-zks" secondAttribute="trailing" constant="16" id="Z6t-cI-iKt"/>
-                            <constraint firstItem="HT0-ep-dJh" firstAttribute="top" secondItem="rYW-xq-U7I" secondAttribute="bottom" constant="22" id="diq-pv-XHg"/>
-                            <constraint firstItem="HT0-ep-dJh" firstAttribute="leading" secondItem="394-jP-v59" secondAttribute="leading" constant="33" id="fNg-YM-Ywo"/>
-                            <constraint firstItem="HT0-ep-dJh" firstAttribute="top" secondItem="394-jP-v59" secondAttribute="top" constant="111" id="gCG-rm-YjK"/>
-                            <constraint firstItem="rYW-xq-U7I" firstAttribute="leading" secondItem="394-jP-v59" secondAttribute="leading" constant="104" id="m8X-Gc-7br"/>
                             <constraint firstItem="394-jP-v59" firstAttribute="trailing" secondItem="znz-QG-HE5" secondAttribute="trailing" constant="16" id="pNR-wk-yV0"/>
-                            <constraint firstItem="394-jP-v59" firstAttribute="trailing" secondItem="HT0-ep-dJh" secondAttribute="trailing" constant="33" id="wru-gV-8ji"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="394-jP-v59"/>
                     </view>
@@ -139,4 +144,10 @@
             <point key="canvasLocation" x="-1194" y="-188"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Camera Icon" width="24" height="24"/>
+        <namedColor name="Dark Blue">
+            <color red="0.0" green="0.41200000047683716" blue="0.85100001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

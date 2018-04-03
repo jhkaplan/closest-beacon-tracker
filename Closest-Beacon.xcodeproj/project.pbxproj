@@ -11,6 +11,7 @@
 		99043EF8206C2668005821CF /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99043EF7206C2668005821CF /* EstimoteSDK.framework */; };
 		9919029920698A0B00C70CC6 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9919029820698A0B00C70CC6 /* UserListController.swift */; };
 		9919029B206990C600C70CC6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9919029A206990C600C70CC6 /* User.swift */; };
+		99271F602073FBC80088B20C /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99271F5F2073FBC80088B20C /* QRScannerViewController.swift */; };
 		992BD40620597034003E8F0C /* UserLocationTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992BD40520597034003E8F0C /* UserLocationTableVC.swift */; };
 		992BD40820597697003E8F0C /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992BD40720597697003E8F0C /* LoginController.swift */; };
 		992BD4102059F656003E8F0C /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992BD40F2059F656003E8F0C /* UserLocation.swift */; };
@@ -64,6 +65,7 @@
 		991778E3206C19280044DCEA /* Closest-Beacon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Closest-Beacon.entitlements"; sourceTree = "<group>"; };
 		9919029820698A0B00C70CC6 /* UserListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListController.swift; sourceTree = "<group>"; };
 		9919029A206990C600C70CC6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		99271F5F2073FBC80088B20C /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		992BD40520597034003E8F0C /* UserLocationTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationTableVC.swift; sourceTree = "<group>"; };
 		992BD40720597697003E8F0C /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		992BD40F2059F656003E8F0C /* UserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			children = (
 				9969067420729A2D00EC8303 /* BarrelLocation.swift */,
 				9969067620729AA500EC8303 /* BarrelLocationListController.swift */,
+				99271F5F2073FBC80088B20C /* QRScannerViewController.swift */,
 			);
 			path = Barrels;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				99B7E3162058A0EA00A69487 /* FirDatabaseService.swift in Sources */,
 				99E2184C204F6F810060959C /* _SignUpVC.swift in Sources */,
 				99B7E3142058995400A69487 /* LocationData.swift in Sources */,
+				99271F602073FBC80088B20C /* QRScannerViewController.swift in Sources */,
 				99E2184E204F6F8C0060959C /* _SignInVC.swift in Sources */,
 				99DB12C3203DC9580015872B /* AppDelegate.swift in Sources */,
 			);

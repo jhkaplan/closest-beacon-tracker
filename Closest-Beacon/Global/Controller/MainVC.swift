@@ -13,7 +13,7 @@ import FirebaseDatabase
 
 
 class MainVC: UIViewController, CLLocationManagerDelegate {
-    @IBOutlet weak var locationName: UILabel!
+    @IBOutlet weak var locationName: InsetLabel!
     @IBOutlet weak var loggedInUserEmail: UILabel!
     @IBOutlet weak var barrelIDTF: UITextField!
     
@@ -34,15 +34,7 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
     @IBAction func barrelIDButtonOnPressed(_ sender: Any) {
         self.barrelID = barrelIDTF.text
         post()
-        
-        // These next 2 things do not work?
-        
-//        let alert = UIAlertController(title: "Barrel Location Stored", message: "Test Message", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "Close", style: .default, handler: { (nil) in
-//            self.dismiss(animated: true, completion: nil)
-//        }))
-//        self.present(alert, animated: true)
-        showAlert(title: "Barrel Location Stored", message: "Test Message", alertTitle: "Close")
+        showAlert(title: "Barrel Location Stored", message: "Barrel: \(barrelID!) stored in Location: \(String(describing: locationName.text!))", alertTitle: "Close")
         self.barrelIDTF.text = nil
     }
     
@@ -97,6 +89,8 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        barrelIDTF.borderStyle = UITextBorderStyle.roundedRect
         
         
         // Hide navigation Bar
@@ -221,7 +215,9 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         let knownBeacons = beacons.filter{ $0.proximity != CLProximity.unknown }
         if (knownBeacons.count > 0) {
             let closestBeacon = knownBeacons[0] as CLBeacon
-            self.locationName.textColor = self.colors[closestBeacon.minor.intValue]
+//            self.locationName.textColor = self.colors[closestBeacon.minor.intValue]
+            self.locationName.backgroundColor = self.colors[closestBeacon.minor.intValue]
+            self.locationName.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             self.locationName.text = self.beaconLocation[closestBeacon.minor.intValue]
             if self.currentBeaconID != closestBeacon.minor.intValue {
                 self.currentBeaconID = closestBeacon.minor.intValue
@@ -229,5 +225,12 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
             }
         }
         
+    }
+}
+
+class InsetLabel: UILabel {
+    override func drawText(in rect: CGRect) {
+        let insets = UIEdgeInsets.init(top: 5, left: 10, bottom: 5, right: 10)
+        super.drawText(in: UIEdgeInsetsInsetRect(rect, insets))
     }
 }

@@ -20,6 +20,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
         return view
     }()
     
+    
     lazy var loginRegisterButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = UIColor(named: "Dark Blue")
@@ -171,6 +172,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         
         // view.backgroundColor = UIColor(named: "Enablon Blue")
         view.backgroundColor = UIColor.white

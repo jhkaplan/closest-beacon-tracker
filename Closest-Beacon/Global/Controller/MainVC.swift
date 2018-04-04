@@ -17,12 +17,12 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var loggedInUserEmail: UILabel!
     @IBOutlet weak var barrelIDTF: UITextField!
     
-    var qrInputBoxValue : String? = nil
+//    var qrInputBoxValue : String? = nil
     
     @IBAction func launchQRScanner(_ sender: Any) {
         let qrScannerViewController = QRScannerViewController()
         qrScannerViewController.mainViewController = self
-        show(qrScannerViewController, sender: self)
+        present(qrScannerViewController, animated: true, completion: nil)
     }
     
     func setInputBox(text: String) {
@@ -36,14 +36,21 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         post()
         
         // These next 2 things do not work?
-        self.qrInputBoxValue = nil
-        showAlert(title: "Posted", message: "\(barrelID ?? "") \(locationName)", alertTitle: "Close")
+        
+//        let alert = UIAlertController(title: "Barrel Location Stored", message: "Test Message", preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "Close", style: .default, handler: { (nil) in
+//            self.dismiss(animated: true, completion: nil)
+//        }))
+//        self.present(alert, animated: true)
+        showAlert(title: "Barrel Location Stored", message: "Test Message", alertTitle: "Close")
+        self.barrelIDTF.text = nil
     }
     
     func showAlert(title: String, message: String, alertTitle: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let uiAlertAction = UIAlertAction(title: alertTitle, style: .default, handler: nil)
         alert.addAction(uiAlertAction)
+        self.present(alert, animated: true)
     }
     
     

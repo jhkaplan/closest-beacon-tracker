@@ -58,12 +58,11 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
                     // Extracting the data from QR code and presenting it as a string value
                     // Set value as input box text
                     self.mainViewController.setInputBox(text: object.stringValue!)
-                    // Does not work
-                    let alert = UIAlertController(title: "Barrel Identified", message: object.stringValue, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Set", style: .default, handler: { (nil) in
-                        self.dismiss(animated: true, completion: nil)
-                    }))
-                    // Does not work
+//                    let alert = UIAlertController(title: "Barrel Identified", message: object.stringValue, preferredStyle: .alert)
+//                    alert.addAction(UIAlertAction(title: "Set", style: .default, handler: { (nil) in
+//                        self.dismiss(animated: true, completion: nil)
+//                    }))
+//                    self.present(alert, animated: true)
                     self.dismiss(animated: true, completion: nil)
                     
                 }

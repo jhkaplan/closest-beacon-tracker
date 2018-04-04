@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Barrel Location</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -31,6 +33,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>We need to access your camera to scan QR codes and barcodes</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Detect location beacons and set location as closest</string>
 	<key>NSLocationAlwaysUsageDescription</key>
@@ -62,7 +66,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>We need to access your camera to scan QR codes and barcodes</string>
 </dict>
 </plist>

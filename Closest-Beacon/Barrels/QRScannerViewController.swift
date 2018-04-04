@@ -17,9 +17,20 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     
     var qrCodeFrameView: UIView?
     var video = AVCaptureVideoPreviewLayer()
+    
+    let greenBoxImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = #imageLiteral(resourceName: "Green Box")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        qrCodeFrameView = UIView()
         
         let session = AVCaptureSession()
         
@@ -48,7 +59,18 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         view.layer.addSublayer(video)
         
         session.startRunning()
+        
+        view.addSubview(greenBoxImageView)
+        view.bringSubview(toFront: greenBoxImageView)
+        setupGreenBoxImageView()
 
+    }
+    
+    func setupGreenBoxImageView() {
+        greenBoxImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        greenBoxImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        greenBoxImageView.widthAnchor.constraint(equalToConstant: 333).isActive = true
+        greenBoxImageView.heightAnchor.constraint(equalToConstant: 333).isActive = true
     }
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
@@ -63,7 +85,10 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
 //                        self.dismiss(animated: true, completion: nil)
 //                    }))
 //                    self.present(alert, animated: true)
-                    self.dismiss(animated: true, completion: nil)
+                    _ = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (timer) in
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                    
                     
                 }
             }

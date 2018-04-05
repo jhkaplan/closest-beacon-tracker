@@ -13,11 +13,14 @@ import FirebaseDatabase
 
 
 class MainVC: UIViewController, CLLocationManagerDelegate {
-    @IBOutlet weak var locationName: InsetLabel!
+//    @IBOutlet weak var locationName: InsetLabel!
     @IBOutlet weak var loggedInUserEmail: UILabel!
     @IBOutlet weak var barrelIDTF: UITextField!
     
-//    var qrInputBoxValue : String? = nil
+    var locationName: String = ""
+    
+    @IBOutlet weak var location2: UIButton!
+    //    var qrInputBoxValue : String? = nil
     
     @IBAction func launchQRScanner(_ sender: Any) {
         let qrScannerViewController = QRScannerViewController()
@@ -34,7 +37,7 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
     @IBAction func barrelIDButtonOnPressed(_ sender: Any) {
         self.barrelID = barrelIDTF.text
         post()
-        showAlert(title: "Barrel Location Stored", message: "Barrel: \(barrelID!) stored in Location: \(String(describing: locationName.text!))", alertTitle: "Close")
+        showAlert(title: "Barrel Location Stored", message: "Barrel: \(barrelID!) stored in Location: \(String(describing: locationName))", alertTitle: "Close")
         self.barrelIDTF.text = nil
     }
     
@@ -201,7 +204,7 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         
         
         // Post Event to Blockchain API
-        BlockchainAPI.blockchainAPI(user, currentBeacon: currentBeacon!)
+        BlockchainAPI.blockchainAPI(user, currentBeacon: currentBeacon!, barrelID: barrelID!, eventTime: eventTime)
     }
     
     
@@ -216,9 +219,15 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         if (knownBeacons.count > 0) {
             let closestBeacon = knownBeacons[0] as CLBeacon
 //            self.locationName.textColor = self.colors[closestBeacon.minor.intValue]
-            self.locationName.backgroundColor = self.colors[closestBeacon.minor.intValue]
-            self.locationName.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            self.locationName.text = self.beaconLocation[closestBeacon.minor.intValue]
+//            self.locationName.backgroundColor = self.colors[closestBeacon.minor.intValue]
+//            self.locationName.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            self.locationName = self.beaconLocation[closestBeacon.minor.intValue]!
+            
+            
+        self.location2.setTitle(locationName, for: .normal)
+            self.location2.backgroundColor = self.colors[closestBeacon.minor.intValue]
+            self.location2.setTitleColor(UIColor.white, for: .normal)
+            
             if self.currentBeaconID != closestBeacon.minor.intValue {
                 self.currentBeaconID = closestBeacon.minor.intValue
 //                self.post()

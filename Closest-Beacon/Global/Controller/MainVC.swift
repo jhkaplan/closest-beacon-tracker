@@ -13,14 +13,12 @@ import FirebaseDatabase
 
 
 class MainVC: UIViewController, CLLocationManagerDelegate {
-//    @IBOutlet weak var locationName: InsetLabel!
     @IBOutlet weak var loggedInUserEmail: UILabel!
     @IBOutlet weak var barrelIDTF: UITextField!
     
     var locationName: String = ""
     
     @IBOutlet weak var location2: UIButton!
-    //    var qrInputBoxValue : String? = nil
     
     @IBAction func launchQRScanner(_ sender: Any) {
         let qrScannerViewController = QRScannerViewController()

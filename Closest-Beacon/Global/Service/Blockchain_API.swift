@@ -23,7 +23,7 @@ class BlockchainAPI {
         let postData = NSMutableData(data: "location=\(currentBeacon)".data(using: String.Encoding.utf8)!)
         postData.append("&user=\(user)".data(using: String.Encoding.utf8)!)
         postData.append("&barrelID=\(barrelID)".data(using: String.Encoding.utf8)!)
-        postData.append("&timeStamp=\(eventTime)".data(using: String.Encoding.utf8)!)
+        postData.append("&eventTime=\(eventTime)".data(using: String.Encoding.utf8)!)
         
         let request = NSMutableURLRequest(url: NSURL(string: "https://blockchain.appsfight.com/v1.0/the-positive-company/mine-block/")! as URL,
                                           cachePolicy: .useProtocolCachePolicy,

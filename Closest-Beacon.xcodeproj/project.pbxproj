@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D5E28AB2DA3FACE0695CD2B /* Pods_Closest_Beacon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA3CAABF9C831313F8D4BAA /* Pods_Closest_Beacon.framework */; };
+		4D701BAC7C7EB71D8B5A4285 /* libPods-Closest-Beacon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B54887E7176E4ECD167719 /* libPods-Closest-Beacon.a */; };
 		99043EF8206C2668005821CF /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99043EF7206C2668005821CF /* EstimoteSDK.framework */; };
 		9919029920698A0B00C70CC6 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9919029820698A0B00C70CC6 /* UserListController.swift */; };
 		9919029B206990C600C70CC6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9919029A206990C600C70CC6 /* User.swift */; };
@@ -56,7 +56,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1EA3CAABF9C831313F8D4BAA /* Pods_Closest_Beacon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Closest_Beacon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		523B8C153062FF194F085958 /* Pods-Closest-Beacon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Closest-Beacon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Closest-Beacon/Pods-Closest-Beacon.debug.xcconfig"; sourceTree = "<group>"; };
 		61D143097B9BE00E8E61CE6F /* Pods-Closest-Beacon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Closest-Beacon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Closest-Beacon/Pods-Closest-Beacon.release.xcconfig"; sourceTree = "<group>"; };
 		7B2694A0229013716179262A /* Pods_Closest_BeaconTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Closest_BeaconTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +95,7 @@
 		99E2184B204F6F810060959C /* _SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _SignUpVC.swift; sourceTree = "<group>"; };
 		99E2184D204F6F8C0060959C /* _SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _SignInVC.swift; sourceTree = "<group>"; };
 		B486832F205C157400388669 /* Main_.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main_.storyboard; sourceTree = "<group>"; };
+		B6B54887E7176E4ECD167719 /* libPods-Closest-Beacon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Closest-Beacon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5EA930082B41804E521202E /* Pods_Closest_BeaconUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Closest_BeaconUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -104,8 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D5E28AB2DA3FACE0695CD2B /* Pods_Closest_Beacon.framework in Frameworks */,
 				99043EF8206C2668005821CF /* EstimoteSDK.framework in Frameworks */,
+				4D701BAC7C7EB71D8B5A4285 /* libPods-Closest-Beacon.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,9 +129,9 @@
 		1F90F0AA50DCE326D5530251 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1EA3CAABF9C831313F8D4BAA /* Pods_Closest_Beacon.framework */,
 				7B2694A0229013716179262A /* Pods_Closest_BeaconTests.framework */,
 				C5EA930082B41804E521202E /* Pods_Closest_BeaconUITests.framework */,
+				B6B54887E7176E4ECD167719 /* libPods-Closest-Beacon.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -533,19 +533,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Closest-Beacon/Pods-Closest-Beacon-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_ROOT}/EstimoteBluetoothScanning/EstimoteBluetoothScanning/EstimoteBluetoothScanning.framework",
+				"${PODS_ROOT}/EstimoteProximitySDK/EstimoteProximitySDK/EstimoteProximitySDK.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EstimoteBluetoothScanning.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EstimoteProximitySDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -559,15 +557,31 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Closest-Beacon/Pods-Closest-Beacon-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseTwitterAuthUI.bundle",
+				"${PODS_ROOT}/GTMOAuth2/Source/Touch/GTMOAuth2ViewTouch.xib",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC/gRPCCertificates.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseTwitterAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GTMOAuth2ViewTouch.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

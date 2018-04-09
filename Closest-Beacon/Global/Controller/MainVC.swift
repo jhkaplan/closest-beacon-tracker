@@ -63,10 +63,17 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
     let colors = [
         38865: UIColor(red: 46/255, green: 49/255, blue: 146/255, alpha: 1),
         14477: UIColor(red: 159/255, green: 205/255, blue: 174/255, alpha: 1),
-        9463: UIColor(red: 110/255, green: 206/255, blue: 245/255, alpha: 1),
         37987: UIColor(red: 110/255, green: 206/255, blue: 245/255, alpha: 1),
-        3465: UIColor.yellow
+        37047: UIColor(red: 135/255, green: 22/255, blue: 104/255, alpha: 1)
         ]
+    
+    let colorHex = [
+        38865 : "2E3192",
+        14477 : "9FCDAE",
+        9463 : "6ECEF5",
+        37047 : "871668"
+    
+    ]
     
     let hueColorXY = [
         // created from here: http://colormine.org/convert/rgb-to-yxy
@@ -83,10 +90,10 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
     
 
     let beaconLocation = [
-        38865: "Waste Accumulation",
+        38865: "Waste Accumulation 1",
 //        38865: "Taylor's Office",
         14477: "Staging Area",
-        3465: "Telemetry",
+        37047: "Waste Accumulation 2",
 //        14477: "Benoit's Office",
         37987: "Offsite"
 //        37987: "Josh's Office"
@@ -191,6 +198,7 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         let eventTime = dateFormatter.string(from: Date())
         let postTime = ServerValue.timestamp()
         let fbBarrelID = barrelID
+        let colorHex = self.colorHex[beaconID]
         
         
         let post :  [String : AnyObject] = ["user" : user as AnyObject,
@@ -206,7 +214,7 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         
         
         // Post Event to Blockchain API
-        BlockchainAPI.blockchainAPI(user, currentBeacon: currentBeacon!, barrelID: barrelID!, eventTime: eventTime)
+        BlockchainAPI.blockchainAPI(user, currentBeacon: currentBeacon!, barrelID: barrelID!, eventTime: eventTime, colorHex: colorHex!)
     }
     
     
@@ -224,7 +232,8 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
 //            self.locationName.textColor = self.colors[closestBeacon.minor.intValue]
 //            self.locationName.backgroundColor = self.colors[closestBeacon.minor.intValue]
 //            self.locationName.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            self.locationName = self.beaconLocation[closestBeaconMinorValue]!
+            guard let locationName = self.beaconLocation[closestBeaconMinorValue] else { return }
+            self.locationName = locationName
             
             
         self.location2.setTitle(locationName, for: .normal)

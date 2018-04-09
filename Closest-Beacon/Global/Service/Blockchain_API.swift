@@ -11,7 +11,7 @@ import Foundation
 
 class BlockchainAPI {
     
-    static func blockchainAPI(_ user: String, currentBeacon: String, barrelID: String, eventTime: String) {
+    static func blockchainAPI(_ user: String, currentBeacon: String, barrelID: String, eventTime: String, colorHex: String) {
         let headers = [
             "Content-Type": "application/x-www-form-urlencoded",
             "Cache-Control": "no-cache",
@@ -24,6 +24,7 @@ class BlockchainAPI {
         postData.append("&user=\(user)".data(using: String.Encoding.utf8)!)
         postData.append("&barrelID=\(barrelID)".data(using: String.Encoding.utf8)!)
         postData.append("&eventTime=\(eventTime)".data(using: String.Encoding.utf8)!)
+        postData.append("&hexColor=\(colorHex)".data(using: String.Encoding.utf8)!)
         
         let request = NSMutableURLRequest(url: NSURL(string: "https://blockchain.appsfight.com/v1.0/the-positive-company/mine-block/")! as URL,
                                           cachePolicy: .useProtocolCachePolicy,

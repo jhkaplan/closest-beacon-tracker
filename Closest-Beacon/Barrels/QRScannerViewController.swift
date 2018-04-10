@@ -61,7 +61,14 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.addObserverForAVCaptureSessionWasInterrupted()
         self.prevLayer.frame.size = self.myView.frame.size
+    }
+
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewWillDisappear(true)
+        NotificationCenter.default.removeObserver(self)
     }
 
     func createSession() {
@@ -150,5 +157,39 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         
     }
     
+
+    func addObserverForAVCaptureSessionWasInterrupted()
+    {
+        let mainQueue = OperationQueue.main
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.AVCaptureSessionWasInterrupted,
+                                                     object: nil,
+                                                     queue: mainQueue)
+        { (notification: Notification) -> Void in
+            
+            guard let userInfo = notification.userInfo else
+            {
+                return
+            }
+            
+            // Check if the current system is iOS9+ because AVCaptureSessionInterruptionReasonKey is iOS9+ (relates to Split View / Slide Over)
+            if #available(iOS 9.0, *)
+            {
+                if let interruptionReason = userInfo[AVCaptureSessionInterruptionReasonKey],
+                    Int(interruptionReason as! NSNumber) == AVCaptureSession.InterruptionReason.videoDeviceNotAvailableWithMultipleForegroundApps.rawValue
+                {
+                    // Warn the user they need to get back to Full Screen Mode
+                    let alert = UIAlertController(title: "Splitview Not Supported",
+                                                  message: "Splitview is Not supported",
+                                                  preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+            else
+            {
+                // Fallback on earlier versions. From iOS8 and below Split View and Slide Over don't exist, no need to handle anything then.
+            }
+        }
+    }
 
 }

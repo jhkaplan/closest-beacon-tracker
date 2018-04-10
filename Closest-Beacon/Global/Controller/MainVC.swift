@@ -189,32 +189,37 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
     func post(){
         
         // define post to Firebase function
-        
+
+        // check all input are properly set
         guard let beaconID = self.currentBeaconID else { return }
         guard let user: String = Auth.auth().currentUser?.email else { return }
-        let currentBeacon = self.beaconLocation[beaconID]
+        guard let colorHex: String = self.colorHex[beaconID] else { return }
+        guard let currentBeacon = self.beaconLocation[beaconID] else { return }
+        guard let fbBarrelID = barrelID  else { return }
+
+        // format date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
         let eventTime = dateFormatter.string(from: Date())
         let postTime = ServerValue.timestamp()
-        let fbBarrelID = barrelID
-        let colorHex = self.colorHex[beaconID]
-        
-        
+
+        // post to firebase Ò
         let post :  [String : AnyObject] = ["user" : user as AnyObject,
                                             "location" : currentBeacon as AnyObject,
                                             "eventTime" : eventTime as AnyObject,
                                             "postTime" : postTime as AnyObject,
                                             "barrelID" : fbBarrelID as AnyObject
         ]
-        
         let databaseREF = Database.database().reference()
-        
         databaseREF.child("Locations").childByAutoId().setValue(post)
         
         
         // Post Event to Blockchain API
-        BlockchainAPI.blockchainAPI(user, currentBeacon: currentBeacon!, barrelID: barrelID!, eventTime: eventTime, colorHex: colorHex!)
+        BlockchainAPI.blockchainAPI(user,
+                                    currentBeacon: currentBeacon,
+                                    barrelID: fbBarrelID,
+                                    eventTime: eventTime,
+                                    colorHex: colorHex)
     }
     
     

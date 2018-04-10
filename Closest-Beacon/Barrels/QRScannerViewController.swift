@@ -52,6 +52,9 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         // create session
         self.createSession()
 
+        // add green square
+        self.addGreenBox()
+
         // add my view to root view
         self.view.addSubview(self.myView)
         
@@ -82,7 +85,8 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         self.session?.addInput(input)
         self.device = captureDevice
 
-    
+        // add output
+        self.addOutput()
     
         prevLayer = AVCaptureVideoPreviewLayer(session: session)
         prevLayer.frame.size = myView.frame.size
@@ -93,7 +97,20 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         
         session.startRunning()
     }
-    
+
+    func addOutput() {
+        let output = AVCaptureMetadataOutput()
+        self.session.addOutput(output)
+        output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+        output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
+    }
+
+    func addGreenBox() {
+        self.myView.addSubview(self.greenBoxImageView)
+        self.myView.bringSubview(toFront: self.greenBoxImageView)
+        self.setupGreenBoxImageView()
+    }
+
     func cameraWithPosition(position: AVCaptureDevice.Position) -> AVCaptureDevice? {
         let devices = AVCaptureDevice.devices(for: AVMediaType.video)
         for device in devices {

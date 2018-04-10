@@ -61,8 +61,9 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     let region = CLBeaconRegion(proximityUUID: NSUUID(uuidString: "D0D3FA86-CA76-45EC-9BD9-6AF4F91B4F2A")! as UUID, identifier: "Estimotes")
     let colors = [
-        38865: UIColor(red: 46/255, green: 49/255, blue: 146/255, alpha: 1),
-        14477: UIColor(red: 159/255, green: 205/255, blue: 174/255, alpha: 1),
+        /*38865*/3465: UIColor(red: 46/255, green: 49/255, blue: 146/255, alpha: 1),
+        /*14477*/2576: UIColor(red: 159/255, green: 205/255, blue: 174/255, alpha: 1),
+        // 2576: UIColor(red: 159/255, green: 205/255, blue: 174/255, alpha: 1),
         37987: UIColor(red: 110/255, green: 206/255, blue: 245/255, alpha: 1),
         37047: UIColor(red: 135/255, green: 22/255, blue: 104/255, alpha: 1)
         ]
@@ -90,10 +91,10 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
     
 
     let beaconLocation = [
-        38865: "Waste Accumulation 1",
+        /*38865*/3465: "Waste Accumulation 1",
 //        38865: "Taylor's Office",
-        14477: "Staging Area",
-        37047: "Waste Accumulation 2",
+        /*14477*/2576: "Staging Area",
+        37047: "Offsite",
 //        14477: "Benoit's Office",
         37987: "Offsite"
 //        37987: "Josh's Office"

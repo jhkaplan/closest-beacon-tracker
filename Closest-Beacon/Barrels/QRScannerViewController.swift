@@ -43,7 +43,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         self.myView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         /*self.qrCodeFrameView.widthAnchor.constraint(equalToConstant: 500).isActive = true
          self.qrCodeFrameView.heightAnchor.constraint(equalToConstant: 500).isActive = true*/
-        self.myView.backgroundColor = UIColor.yellow
+//        self.myView.backgroundColor = UIColor.yellow
     }
 
     override func viewDidLoad() {

@@ -69,8 +69,8 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         ]
     
     let colorHex = [
-        38865 : "2E3192",
-        14477 : "9FCDAE",
+        /*38865*/3465 : "2E3192",
+        /*14477*/2576 : "9FCDAE",
         9463 : "6ECEF5",
         37047 : "871668"
     
